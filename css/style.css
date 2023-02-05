@@ -1714,6 +1714,7 @@ textarea.form-control {
 
 .navbar-dark .navbar-toggler {
   color: #de058a !important;
+  border-color: #de058a !important;
 }
 
 @media (min-width: 200px) and (max-width: 1024px) {
@@ -1901,17 +1902,33 @@ img {
   list-style: none;
   position: absolute;
   left: 0;
-  background: #333;
   width: 100%;
   top: 50%;
   transform: translatey(-50%);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 4em;
 }
 .controls:focus {
   outline: none;
 }
 .controls li:hover {
   cursor: pointer;
+}
+
+
+#register-pannel {
+  background-color: #ca0483;
+  background-image: url(../images/register-pannel-bg.jpg);
+  background-position: top;
+  background-size: cover;  padding: 2em;
+  text-align: center;
+}
+
+#register-pannel button {
+  color: white !important;
+  border-color: white !important;
+  background: none !important;
+  font-size: 1em;
 }
