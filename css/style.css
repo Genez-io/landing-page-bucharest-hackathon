@@ -1729,6 +1729,29 @@ textarea.form-control {
   background-size: cover;
 }
 
+#categories {
+  padding: 100px 0 100px 0;
+  background-image: url(../images/categories-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  color: white
+}
+#schedule {
+  padding: 100px 0 13em 0;
+  background-image: url(../images/schedule-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  color: white
+}
+
+#judges {
+  padding: 100px 0 100px 0;
+  background-image: url(../images/judges-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  color: black
+}
+
 /* an animation for going the arrow up and down for class home-arrow */
 @keyframes bounce {
   0%,
@@ -1772,4 +1795,123 @@ textarea.form-control {
   right: 0;
   margin: 0 auto;
   animation: bounce 3s infinite;
+}
+
+.elem-schedule-info {
+  background-color: white;
+  height: 20em;
+  width: 20em !important;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.elem-schedule-info p {
+  width: 90%;
+  font-weight: 500;
+  line-height: 1.3em;
+  color: black;
+  font-size: 1.2em;
+}
+
+#schedule h3 {
+  font-size: 3.3em !important;
+  line-height: 1em;
+  margin-bottom: 0;
+}
+
+
+@media (min-width: 200px) and (max-width: 1024px) {
+  #schedule h3 {
+    font-size: 2.5em !important
+  }
+}
+
+
+.tns-nav {
+  margin: auto;
+  width: fit-content;
+  margin-top: 20px;
+}
+
+.tns-nav button {
+  background: none;
+  border: 2px solid #ca0483;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  margin-left: 3px;
+  margin-right: 3px;
+  padding: 0 !important;
+}
+
+.tns-nav-active {
+  background-color: #ca0483 !important;
+}
+
+.slider-item {
+  text-align: center;
+  padding: 0;
+  color: black;
+  padding: 0.5em;
+  /* margin: 1em; */
+}
+
+.slider-item-inner {
+
+  background-image: url(../images/judge-bg.jpg);
+  background-position: top;
+  background-size: cover;
+  padding: 0.6em;
+  padding-top: 5em !important;
+  margin-top: -5em !important;
+
+
+}
+
+.slider-item-human-photo {
+  border-radius: 50%;
+  width: 60%;
+}
+
+.slider-item p {
+  font-weight: 400;
+  line-height: 1.3em;
+  color: black;
+  font-size: 1.3em;
+}
+
+.slider-container {
+  padding: 0rem 3rem;
+  overflow: hidden;
+  position: relative;
+}
+img {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+}
+.controls {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  left: 0;
+  background: #333;
+  width: 100%;
+  top: 50%;
+  transform: translatey(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.controls:focus {
+  outline: none;
+}
+.controls li:hover {
+  cursor: pointer;
 }
