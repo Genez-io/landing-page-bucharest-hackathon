@@ -86,19 +86,43 @@ function fadeIn() {
 
 // client-slider
 
-const slider = tns({
+const sliderJudges = tns({
   container: ".slider-judges",
   loop: true,
   items: 1,
   slideBy: "page",
   nav: true,
   navPosition: "bottom",
-  autoplay: false,
+  autoplay: true,
   speed: 400,
   autoplayButtonOutput: false,
   mouseDrag: true,
   lazyload: true,
   controlsContainer: "#customize-controls-judges",
+  responsive: {
+    640: {
+      items: 2
+    },
+
+    768: {
+      items: 4
+    }
+  }
+});
+
+const sliderMentors = tns({
+  container: ".slider-mentors",
+  loop: true,
+  items: 1,
+  slideBy: "page",
+  nav: true,
+  navPosition: "bottom",
+  autoplay: true,
+  speed: 400,
+  autoplayButtonOutput: false,
+  mouseDrag: true,
+  lazyload: true,
+  controlsContainer: "#customize-controls-mentors",
   responsive: {
     640: {
       items: 2

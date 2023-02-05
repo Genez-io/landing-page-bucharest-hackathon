@@ -1863,15 +1863,21 @@ textarea.form-control {
 }
 
 .slider-item-inner {
-
   background-image: url(../images/judge-bg.jpg);
   background-position: top;
   background-size: cover;
   padding: 0.6em;
   padding-top: 5em !important;
   margin-top: -5em !important;
+}
 
+.slider-item-inner-mentors {
+  background-image: url(../images/mentor-bg.jpg);
+  color: white !important;
+}
 
+.slider-item-inner-mentors p {
+  color: white !important;
 }
 
 .slider-item-human-photo {
@@ -1931,4 +1937,8 @@ img {
   border-color: white !important;
   background: none !important;
   font-size: 1em;
+}
+
+.judge-linkedin-icon {
+  cursor: pointer;
 }
