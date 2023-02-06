@@ -70,9 +70,6 @@
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ms-auto" id="navbar-navlist">
-            <li class="nav-item nav-register-custom-btn me-4">
-              <a class="nav-link" href="#register"><span>REGISTER</span></a>
-            </li>
             <li class="nav-item">
               <a class="nav-link" href="#about-us">About Us</a>
             </li>
@@ -94,6 +91,9 @@
 
             <li class="nav-item">
               <a class="nav-link" href="#faq">FAQ</a>
+            </li>
+            <li class="nav-item nav-register-custom-btn">
+              <a class="nav-link" href="#register"><span>REGISTER</span></a>
             </li>
           </ul>
         </div>
@@ -120,16 +120,42 @@
 
               <div class="mt-4 pt-3">
                 <a href="" class="btn btn-hack-left me-2">
-                  <img src="images/location-icon.png" alt="" />
+                  <div
+                    style="
+                      display: flex;
+                      align-content: center;
+                      justify-content: center;
+                      align-items: center;
+                    "
+                  >
+                    <img
+                      src="images/location-icon.png"
+                      alt=""
+                      style="margin-right: 10px"
+                    />
 
-                  BUCHAREST</a
-                >
+                    BUCHAREST
+                  </div>
+                </a>
 
                 <a href="" class="btn btn-hack-right ms-2">
-                  <img src="images/calendar-icon.png" alt="" />
+                  <div
+                    style="
+                      display: flex;
+                      align-content: center;
+                      justify-content: center;
+                      align-items: center;
+                    "
+                  >
+                    <img
+                      src="images/calendar-icon.png"
+                      alt=""
+                      style="margin-right: 10px"
+                    />
 
-                  11-12 MARCH 2023</a
-                >
+                    11-12 MARCH 2023
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -142,21 +168,6 @@
       </div>
     </section>
     <!-- END HOME -->
-
-    <section class="section px-5" id="register-pannel">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-12">
-            <button
-              type="button"
-              class="btn btn-primary nav-register-custom-btn px-5"
-            >
-              REGISTER
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- START ABOUT -->
     <section class="section px-5" id="about-us">
@@ -198,7 +209,20 @@
       </div>
     </section>
     <!-- END ABOUT -->
-
+    <section class="section px-5" id="register-pannel">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <button
+              type="button"
+              class="btn btn-primary nav-register-custom-btn px-5"
+            >
+              REGISTER
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- START CATEOGORIES -->
     <section class="section px-2" id="categories">
       <div class="container">
@@ -210,30 +234,6 @@
               </h3>
             </div>
           </div>
-        </div>
-
-        <div class="col-lg-5 mx-auto mt-4 text-center">
-          <img src="images/blockchain-icon.png" class="img-fluid mt-4" alt="" />
-          <h3 class="mt-3">BLOCKCHAIN</h3>
-          <p>
-            Fast indexing for blockchain:
-            <span style="color: #de058a !important">
-              genezio example link
-            </span>
-            TenderMint Blockchain explorer
-          </p>
-        </div>
-
-        <div class="col-lg-6 mx-auto mt-4 text-center">
-          <img src="images/ai-icon.png" class="img-fluid mt-4" alt="" />
-          <h3 class="mt-1">AI</h3>
-          <p>
-            <span style="color: #de058a !important"> ChatGPT + VS Code => </span
-            ><br />
-            personal assistant. When you write in an unknown language ask how to
-            write something and ask how to do it and the response is put in the
-            code. Select code and check if it is alright.
-          </p>
         </div>
 
         <div class="col-lg-6 mx-auto mt-4 text-center">
@@ -253,10 +253,34 @@
           </p>
         </div>
 
+        <div class="col-lg-5 mx-auto mt-4 text-center">
+          <img src="images/blockchain-icon.png" class="img-fluid mt-4" alt="" />
+          <h3 class="mt-3">BLOCKCHAIN</h3>
+          <p>
+            Fast indexing for blockchain:
+            <span style="color: #de058a !important">
+              genezio example link
+            </span>
+            TenderMint Blockchain explorer
+          </p>
+        </div>
+
+        <div class="col-lg-6 mx-auto mt-4 text-center">
+          <img src="images/ai-icon.png" class="img-fluid mt-4" alt="" />
+          <h3 class="mt-1">AI</h3>
+          <p>
+            <span style="color: #de058a !important"> ChatGPT + VS Code => </span
+            >personal assistant. <br />
+            When you write in an unknown language ask how to write something and
+            ask how to do it and the response is put in the code. Select code
+            and check if it is alright.
+          </p>
+        </div>
+
         <div class="col-lg-6 mx-auto mt-4 text-center">
           <img src="images/tech-used-icon.png" class="img-fluid mt-4" alt="" />
           <h3 class="mt-1">TECHNOLOGIES USED</h3>
-          <p class="d-none d-lg-block d-xl-none">
+          <p class="d-none d-lg-block d-xl-block">
             OpenAI/ChatGPT
             <span style="color: #de058a !important; font-size: 2em">|</span>
             Genezio
@@ -271,7 +295,7 @@
             <span style="color: #de058a !important; font-size: 2em">|</span> EVM
             <span style="color: #de058a !important; font-size: 2em">|</span> AWS
           </p>
-          <p class="d-lg-none d-xl-block">
+          <p class="d-lg-none d-xl-none">
             OpenAI/ChatGPT<br />Genezio<br />Bware Labs<br />Axelar<br />Avalanche
             Blockchain<br />Github<br />
             Tendermint<br />EVM<br />AWS<br />
@@ -326,7 +350,7 @@
         </div>
         <div class="col-lg-5 mx-auto mt-4 text-center">
           <h3>
-            11<span
+            11:00<span
               style="
                 color: black;
                 font-size: 0.5em;
@@ -342,7 +366,7 @@
         </div>
         <div class="col-lg-5 mx-auto mt-4 text-center">
           <h3>
-            12<span
+            12:00<span
               style="
                 color: black;
                 font-size: 0.5em;
@@ -356,7 +380,7 @@
         </div>
         <div class="col-lg-5 mx-auto mt-4 text-center">
           <h3>
-            13-15<span
+            13:00-15:00<span
               style="
                 color: black;
                 font-size: 0.5em;
@@ -370,7 +394,7 @@
         </div>
         <div class="col-lg-5 mx-auto mt-4 text-center">
           <h3>
-            16<span
+            16:00<span
               style="
                 color: black;
                 font-size: 0.5em;
@@ -832,64 +856,163 @@
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div class="accordion-body">
-                    CodeTruck is a developer Boilerplate Backend Generator tool
-                    that helps you launch your project in a few minutes. Our
-                    tool generates fully functional and customizable Node.js
-                    projects based on your preferences or our templates.
+                    The event will be held on the 11-12th of March 2023.
                   </div>
                 </div>
               </div>
+
               <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingTwo">
+                <h2 class="accordion-header" id="flush-headingOne">
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseTwo"
+                    data-bs-target="#flush-collapseOne2"
                     aria-expanded="false"
-                    aria-controls="flush-collapseTwo"
+                    aria-controls="flush-collapseOne2"
                   >
-                    How many projects can I add with one CodeTruck account?
+                    How can I get to the location?
                   </button>
                 </h2>
                 <div
-                  id="flush-collapseTwo"
+                  id="flush-collapseOne2"
                   class="accordion-collapse collapse"
-                  aria-labelledby="flush-headingTwo"
+                  aria-labelledby="flush-headingOne"
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div class="accordion-body">
-                    Whether you choose a basic or a premium subscription, one
-                    CodeTruck account allows you to add an unlimited number of
-                    backend projects.
+                    You can either take an Uber directly to Beans&Dots on Ion
+                    Brezoianu Street 23-25, or take the subway to “Universitate”
+                    station and then walk for about 10 minutes.
                   </div>
                 </div>
               </div>
+
               <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingFour">
+                <h2 class="accordion-header" id="flush-headingOne">
                   <button
                     class="accordion-button collapsed"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseFour"
+                    data-bs-target="#flush-collapseOne3"
                     aria-expanded="false"
-                    aria-controls="flush-collapseFour"
+                    aria-controls="flush-collapseOne3"
                   >
-                    Does CodeTruck offer a free trial?
+                    Who can participate?
                   </button>
                 </h2>
                 <div
-                  id="flush-collapseFour"
+                  id="flush-collapseOne3"
                   class="accordion-collapse collapse"
-                  aria-labelledby="flush-headingFour"
+                  aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">Experienced programmers</div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne4"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne4"
+                  >
+                    How can I form a team?
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne4"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingOne"
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div class="accordion-body">
-                    Yes, it does. CodeTruck offers a lifetime free of charge
-                    license for non-commercial (free) use. However, the
-                    retention period for each project is only 1 month for free
-                    users. That means you can only access each project in
-                    CodeTruck during this one-month period.
+                    When you register, you will find a section regarding the
+                    team.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne5"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne5"
+                  >
+                    Do all team members need to register in order to
+                    participate?
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne5"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    Yes, everyone needs to fill in the registration form.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne6"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne6"
+                  >
+                    What about food and drinks?
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne6"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    Food and drinks will be provided at the location. If you
+                    want you can also bring your own food.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne7"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne7"
+                  >
+                    How can I contact you in case I have any further questions?
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne7"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    You can contact us at
+                    <a href="mailto:info@bucharesthackathon.com"
+                      >info@bucharesthackathon.com</a
+                    >
                   </div>
                 </div>
               </div>
@@ -904,7 +1027,7 @@
     <section class="bg-footer bg-light" id="footer">
       <div class="container">
         <div
-          class="row text-center"
+          class="row text-center justify-content-between"
           style="display: flex; align-items: flex-end"
         >
           <div class="col-md-4">
@@ -913,25 +1036,85 @@
             </div>
             <div class="text-sm-start mt-4" style="color: black">
               Powered by
-              <img src="images/bware-genezio-logo.png" alt="" height="25" />
+              <img src="images/bware-genezio-logo.png" alt="" height="30" />
             </div>
           </div>
-          <div class="col-md-4 middle-footer-elem">
+          <div
+            class="col-md-2 middle-footer-elem d-none d-lg-block d-xl-block"
+            style="text-align: left"
+          >
             <p>
-              <a href="#!" class="text-reset">Angular</a>
+              <a href="#about-us" class="text-reset">About Us</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">React</a>
+              <a href="#categories" class="text-reset">Categories</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Vue</a>
+              <a href="#schedule" class="text-reset">Schedule</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Laravel</a>
+              <a href="#judges" class="text-reset">Judges & Mentors</a>
+            </p>
+            <p>
+              <a href="#sponsors" class="text-reset">Sponsors & Prizes</a>
+            </p>
+            <p>
+              <a href="#contact" class="text-reset">Contact</a>
+            </p>
+            <p class="mb-0">
+              <a href="#faq" class="text-reset">FAQ</a>
             </p>
           </div>
           <div class="col-md-4">
             <div class="text-sm-end mt-3 mt-sm-0">
+              <div>
+                <a
+                  style="color: #de058a; font-size: 2.5em"
+                  href="https://www.instagram.com/bucharesthackathon/"
+                  target="_blank"
+                >
+                  <i class="mdi mdi-instagram"></i>
+                </a>
+                <a
+                  style="color: #de058a; font-size: 2.5em"
+                  href="https://www.facebook.com/profile.php?id=100088808577196"
+                  target="_blank"
+                >
+                  <i class="mdi mdi-facebook"></i>
+                </a>
+                <a
+                  style="color: #de058a; font-size: 2.5em"
+                  href="https://www.linkedin.com/company/bucharesthackathon"
+                  target="_blank"
+                >
+                  <i class="mdi mdi-linkedin"></i>
+                </a>
+              </div>
+              <p class="mb-5">
+                <a
+                  href="mailto:sponsorship@bucharesthackathon.com"
+                  style="color: black"
+                >
+                  sponsorship@bucharesthackathon.com
+                </a>
+
+                <a
+                  href="mailto:info@bucharesthackathon.com"
+                  style="color: black"
+                >
+                  info@bucharesthackathon.com
+                </a>
+              </p>
+              <p class="mb-0">
+                <a href="#">
+                  <span style="color: #de058a !important">Regulament</span>
+                </a>
+
+                <span><span style="color: #de058a !important">|</span></span>
+
+                <a href="#"><span style="color: black">Privacy</span></a>
+              </p>
+
               <p class="mb-0">Copyright© 2023 Bucharest Hackathon</p>
             </div>
           </div>

@@ -1724,7 +1724,7 @@ textarea.form-control {
 }
 
 #about-us {
-  padding: 200px 0 200px 0;
+  padding: 100px 0 100px 0;
   background-image: url(../images/about-bg.jpg);
   background-position: center;
   background-size: cover;
@@ -2023,4 +2023,34 @@ img {
 
 .middle-footer-elem p {
   margin-bottom: 0.5rem;
+}
+
+
+.accordion-button::before {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform .2s ease-in-out;
+  background: none !important;
+  content: url("../images/plus-icon.svg");
+  fill:red;
+  margin: 0;
+  margin-right: 10px;
+  margin-top: -5px;
+}
+
+.accordion-button::after {
+  display: none !important;
+}
+
+
+.accordion-button:not(.collapsed)::before {
+  transform: none !important;
+  background: none !important;
+  content: url("../images/minus.svg");
+
 }
