@@ -1753,6 +1753,22 @@ textarea.form-control {
   color: black
 }
 
+#contact {
+  padding: 50px 0 50px 0;
+  background-image: url(../images/contact-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  color: white
+}
+
+#faq {
+  padding: 100px 0 100px 0;
+  background-image: url(../images/faq-bg.jpg);
+  background-position: top;
+  background-size: cover;
+  color: white
+}
+
 /* an animation for going the arrow up and down for class home-arrow */
 @keyframes bounce {
   0%,
@@ -1869,11 +1885,13 @@ textarea.form-control {
   padding: 0.6em;
   padding-top: 5em !important;
   margin-top: -5em !important;
+  box-shadow: 0px 0px 9px 0px #0000002b;
 }
 
 .slider-item-inner-mentors {
   background-image: url(../images/mentor-bg.jpg);
   color: white !important;
+  box-shadow: 0px 0px 9px 0px #0000002b;
 }
 
 .slider-item-inner-mentors p {
@@ -1941,4 +1959,68 @@ img {
 
 .judge-linkedin-icon {
   cursor: pointer;
+}
+
+.prize-elem-outer {
+  padding: 2em;
+  padding-bottom: 0;
+}
+
+.prize-elem-count {
+  color: #de058a !important;
+    font-size: 11em;
+    font-weight: bold;
+}
+
+.contact-title h3 {
+  font-size: 5.5em !important;
+}
+
+@media (max-width: 1024px) {
+  .contact-title h3 {
+    font-size: 3.5em !important;
+  }
+}
+
+.contact-emails a {
+  color: white !important;
+  text-align: center;
+}
+
+.contact-emails a:hover {
+  color: #f6afdb !important;
+}
+
+
+#faq button {
+  color: white;
+  font-size: 0.7em;
+  padding: 0.2em;
+}
+
+.accordion-button:not(.collapsed) {
+  color: none;
+  background: none;
+}
+
+#faq button:focus {
+  color: white;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+@media (max-width:1024px) {
+  #contact a {
+    justify-content: center;
+  }
+}
+
+#footer {
+  color: black !important;
+}
+
+.middle-footer-elem p {
+  margin-bottom: 0.5rem;
 }
