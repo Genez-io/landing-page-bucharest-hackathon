@@ -32,6 +32,20 @@
     <!-- Custom Css -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-X1XKC9N10S"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-X1XKC9N10S");
+  </script>
 
   <body>
     <!-- START  NAVBAR -->
@@ -83,7 +97,7 @@
               <a class="nav-link" href="#judges">Judges & Mentors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#sponsors">Sponsors & Prizes</a>
+              <a class="nav-link" href="#sponsors">Partners & Prizes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
@@ -119,7 +133,11 @@
               </h2>
 
               <div class="mt-4 pt-3">
-                <a href="" class="btn btn-hack-left me-2">
+                <a
+                  href="https://goo.gl/maps/botLeRZL9KKRcV4w9"
+                  target="_blank"
+                  class="btn btn-hack-left me-2"
+                >
                   <div
                     style="
                       display: flex;
@@ -227,16 +245,20 @@
     <section class="section px-2" id="categories">
       <div class="container">
         <div class="row justify-content-center mb-4">
-          <div class="col-lg-12">
+          <div class="col-lg-7">
             <div class="text-center">
               <h3 class="title" style="font-size: 2em !important">
                 Categories
               </h3>
+              <p>
+                You can come up with any idea in any of these categories. The
+                following are just some examples.
+              </p>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-6 mx-auto mt-4 text-center">
+        <div class="col-lg-7 mx-auto mt-4 text-center">
           <img
             src="images/blockchain-ai-icon.png"
             class="img-fluid mt-4"
@@ -246,34 +268,58 @@
             BLOCKCHAIN <span style="color: #de058a !important">+</span> AI
           </h3>
           <p>
-            Connect with wallet, use chatgpt interface to check your
-            balance/make transactions: genezio example link Learning framework.
-            Ask chatgpt for tutorials for unknown technologies and if you watch
-            you get avatar/NFT
+            <span style="color: #de058a !important">ChatGPT crypto wallet</span
+            ><br />Connect with your wallet, and use the ChatGPT interface to
+            check your balance / make transactions. Check out a tutorial to
+            write your first chatgpt app on genezio (link).<br />
+            <span style="color: #de058a !important">Learning framework</span
+            ><br />Ask ChatGPT for tutorials for technologies you want to learn.
+            Win an NFT avatar if you watch them.
           </p>
         </div>
 
-        <div class="col-lg-5 mx-auto mt-4 text-center">
+        <div class="col-lg-7 mx-auto mt-4 text-center">
           <img src="images/blockchain-icon.png" class="img-fluid mt-4" alt="" />
           <h3 class="mt-3">BLOCKCHAIN</h3>
+          <br />
           <p>
-            Fast indexing for blockchain:
-            <span style="color: #de058a !important">
-              genezio example link
-            </span>
-            TenderMint Blockchain explorer
+            <span style="color: #de058a !important"
+              >Index NFT transactions on the Ethereum blockchain</span
+            ><br />Check out a tutorial on how to write an indexing app on
+            <a
+              href="https://github.com/Genez-io/genezio-examples/tree/master/javascript/blockchain"
+              style="color: white"
+              target="_blank"
+              ><u>genezio repo</u></a
+            >.<br />
+            <span style="color: #de058a !important"
+              >TenderMint Blockchain Explorer</span
+            ><br />Details needed from the Bware team - example, provisioning a
+            tender mint node, etc<br />
+            <span style="color: #de058a !important"
+              >Write an updated version of the Geth client</span
+            ><br />
+            It allows data reorganisation into smaller ranges for read-only
+            purposes. E.g. Access data between 0 and X blocks without having to
+            load the entire Ethereum network. Allow for syncing with the
+            following flags:<br />
+            --block-to-sync-from<br />
+            --partial-db-url
           </p>
         </div>
 
-        <div class="col-lg-6 mx-auto mt-4 text-center">
+        <div class="col-lg-7 mx-auto mt-4 text-center">
           <img src="images/ai-icon.png" class="img-fluid mt-4" alt="" />
           <h3 class="mt-1">AI</h3>
           <p>
-            <span style="color: #de058a !important"> ChatGPT + VS Code => </span
-            >personal assistant. <br />
-            When you write in an unknown language ask how to write something and
-            ask how to do it and the response is put in the code. Select code
-            and check if it is alright.
+            <span style="color: #de058a !important"
+              >Coding assistant plugin for VSCode</span
+            ><br />When you write in a language that you don't know very well,
+            ask ChatGPT how to write something like an if statement.<br />
+            <span style="color: #de058a !important"
+              >Code check plugin for VSCode</span
+            ><br />Select a portion of code and check if it is alright using
+            ChatGPT.
           </p>
         </div>
 
@@ -318,93 +364,88 @@
           </div>
         </div>
 
-        <div class="col-lg-5 mx-auto mt-4 text-center">
-          <h3>
-            9:30-10:30<span
-              style="
-                color: black;
-                font-size: 0.5em;
-                line-height: 1em;
-                margin-bottom: 0;
-              "
-              >am</span
-            >
-          </h3>
-          <p style="font-size: 1.4em; font-weight: 300">
-            registration and welcome coffee
-          </p>
-        </div>
-        <div class="col-lg-5 mx-auto mt-4 text-center">
-          <h3>
-            10:30-11:00<span
-              style="
-                color: black;
-                font-size: 0.5em;
-                line-height: 1em;
-                margin-bottom: 0;
-              "
-              >am</span
-            >
-          </h3>
-          <p style="font-size: 1.4em; font-weight: 300">welcome + info</p>
-        </div>
-        <div class="col-lg-5 mx-auto mt-4 text-center">
-          <h3>
-            11:00<span
-              style="
-                color: black;
-                font-size: 0.5em;
-                line-height: 1em;
-                margin-bottom: 0;
-              "
-              >am</span
-            >
-          </h3>
-          <p style="font-size: 1.4em; font-weight: 300">
-            coding starts 11 march
-          </p>
-        </div>
-        <div class="col-lg-5 mx-auto mt-4 text-center">
-          <h3>
-            12:00<span
-              style="
-                color: black;
-                font-size: 0.5em;
-                line-height: 1em;
-                margin-bottom: 0;
-              "
-              >pm</span
-            >
-          </h3>
-          <p style="font-size: 1.4em; font-weight: 300">coding ends 12 march</p>
-        </div>
-        <div class="col-lg-5 mx-auto mt-4 text-center">
-          <h3>
-            13:00-15:00<span
-              style="
-                color: black;
-                font-size: 0.5em;
-                line-height: 1em;
-                margin-bottom: 0;
-              "
-              >pm</span
-            >
-          </h3>
-          <p style="font-size: 1.4em; font-weight: 300">demos</p>
-        </div>
-        <div class="col-lg-5 mx-auto mt-4 text-center">
-          <h3>
-            16:00<span
-              style="
-                color: black;
-                font-size: 0.5em;
-                line-height: 1em;
-                margin-bottom: 0;
-              "
-              >pm</span
-            >
-          </h3>
-          <p style="font-size: 1.4em; font-weight: 300">prizes</p>
+        <div class="row">
+          <div class="col-lg-5 mx-auto mt-4 text-center">
+            <h2 style="color: black">11 March</h2>
+            <h3>
+              9:30-10:30<span
+                style="
+                  color: black;
+                  font-size: 0.5em;
+                  line-height: 1em;
+                  margin-bottom: 0;
+                "
+                >am</span
+              >
+            </h3>
+            <p style="font-size: 1.4em; font-weight: 300">
+              registration and welcome coffee
+            </p>
+            <h3>
+              10:30-11:00<span
+                style="
+                  color: black;
+                  font-size: 0.5em;
+                  line-height: 1em;
+                  margin-bottom: 0;
+                "
+                >am</span
+              >
+            </h3>
+            <p style="font-size: 1.4em; font-weight: 300">welcome + info</p>
+            <h3>
+              11:00<span
+                style="
+                  color: black;
+                  font-size: 0.5em;
+                  line-height: 1em;
+                  margin-bottom: 0;
+                "
+                >am</span
+              >
+            </h3>
+            <p style="font-size: 1.4em; font-weight: 300">coding starts</p>
+          </div>
+          <div class="col-lg-5 mx-auto mt-4 text-center">
+            <h2 style="color: black">12 March</h2>
+
+            <h3>
+              12:00<span
+                style="
+                  color: black;
+                  font-size: 0.5em;
+                  line-height: 1em;
+                  margin-bottom: 0;
+                "
+                >pm</span
+              >
+            </h3>
+            <p style="font-size: 1.4em; font-weight: 300">coding ends</p>
+            <h3>
+              13:00-15:00<span
+                style="
+                  color: black;
+                  font-size: 0.5em;
+                  line-height: 1em;
+                  margin-bottom: 0;
+                "
+                >pm</span
+              >
+            </h3>
+            <p style="font-size: 1.4em; font-weight: 300">demos</p>
+            <h3>
+              16:00<span
+                style="
+                  color: black;
+                  font-size: 0.5em;
+                  line-height: 1em;
+                  margin-bottom: 0;
+                "
+                >pm</span
+              >
+            </h3>
+            <p style="font-size: 1.4em; font-weight: 300">prizes</p>
+          </div>
         </div>
       </div>
     </section>
@@ -476,81 +517,169 @@
           <div class="slider-judges">
             <div class="slider-item">
               <img
-                src="images/test-pic.jpg"
+                src="images/andrei-pitis-pic.jpg"
                 alt=""
-                class="slider-item-human-photo"
+                class="slider-item-human-photo mb-1"
               />
               <div class="slider-item-inner">
-                <img
-                  src="images/linkedin-color-icon.png"
-                  alt=""
-                  class="mt-4 judge-linkedin-icon"
-                />
-                <p class="mt-3">Andrei Pitis</p>
+                <a
+                  href="https://www.linkedin.com/in/andreipitis/"
+                  target="_blank"
+                  style="color: #de058a !important"
+                >
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i>
+                </a>
+                <p class="">Andrei Pitis</p>
               </div>
             </div>
 
             <div class="slider-item">
               <img
-                src="images/test-pic.jpg"
+                src="images/flavian-manea-pic.jpg"
                 alt=""
-                class="slider-item-human-photo"
+                class="slider-item-human-photo mb-1"
               />
               <div class="slider-item-inner">
-                <img
-                  src="images/linkedin-color-icon.png"
-                  alt=""
-                  class="mt-4 judge-linkedin-icon"
-                />
-                <p class="mt-3">Andrei Pitis</p>
+                <a
+                  href="https://www.linkedin.com/in/maneaflavian/"
+                  target="_blank"
+                  style="color: #de058a !important"
+                >
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Flavian Manea</p>
               </div>
             </div>
 
             <div class="slider-item">
               <img
-                src="images/test-pic.jpg"
+                src="images/alex-minulescu-pic.jpg"
                 alt=""
-                class="slider-item-human-photo"
+                class="slider-item-human-photo mb-1"
               />
               <div class="slider-item-inner">
-                <img
-                  src="images/linkedin-color-icon.png"
-                  alt=""
-                  class="mt-4 judge-linkedin-icon"
-                />
-                <p class="mt-3">Andrei Pitis</p>
+                <a
+                  href="https://www.linkedin.com/in/alexandru-minulescu-376b1459/"
+                  target="_blank"
+                  style="color: #de058a !important"
+                >
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Alexandru Minulescu</p>
               </div>
             </div>
 
             <div class="slider-item">
               <img
-                src="images/test-pic.jpg"
+                src="images/marius-baisan-pic.jpg"
                 alt=""
-                class="slider-item-human-photo"
+                class="slider-item-human-photo mb-1"
               />
               <div class="slider-item-inner">
-                <img
-                  src="images/linkedin-color-icon.png"
-                  alt=""
-                  class="mt-4 judge-linkedin-icon"
-                />
-                <p class="mt-3">Andrei Pitis</p>
+                <a
+                  href="https://www.linkedin.com/in/marius-baisan/"
+                  target="_blank"
+                  style="color: #de058a !important"
+                >
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Marius Baisan</p>
               </div>
             </div>
 
             <div class="slider-item">
               <img
-                src="images/test-pic.jpg"
+                src="images/paula-cionca-pic.jpg"
                 alt=""
-                class="slider-item-human-photo"
+                class="slider-item-human-photo mb-1"
               />
               <div class="slider-item-inner">
-                <img
-                  src="images/linkedin-color-icon.png"
-                  alt=""
-                  class="mt-4 judge-linkedin-icon"
-                />
-                <p class="mt-3">Andrei Pitis</p>
+                <a
+                  href="https://www.linkedin.com/in/andra-paula-avasiloaie/"
+                  target="_blank"
+                  style="color: #de058a !important"
+                >
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Paula Cionca</p>
+              </div>
+            </div>
+
+            <div class="slider-item">
+              <img
+                src="images/diana-olar-pic.jpg"
+                alt=""
+                class="slider-item-human-photo mb-1"
+              />
+              <div class="slider-item-inner">
+                <a
+                  href="https://www.linkedin.com/in/dianaolar/"
+                  target="_blank"
+                  style="color: #de058a !important"
+                >
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Diana Olar</p>
+              </div>
+            </div>
+
+            <div class="slider-item">
+              <img
+                src="images/bogdan-ripa-pic.jpg"
+                alt=""
+                class="slider-item-human-photo mb-1"
+              />
+              <div class="slider-item-inner">
+                <a
+                  href="https://www.linkedin.com/in/bogdanripa/"
+                  target="_blank"
+                  style="color: #de058a !important"
+                >
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Bogdan Ripa</p>
+              </div>
+            </div>
+
+            <div class="slider-item">
+              <img
+                src="images/daniel-rizea-pic.jpg"
+                alt=""
+                class="slider-item-human-photo mb-1"
+              />
+              <div class="slider-item-inner">
+                <a
+                  href="https://www.linkedin.com/in/danielrizea/"
+                  target="_blank"
+                  style="color: #de058a !important"
+                >
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Daniel Rizea</p>
               </div>
             </div>
           </div>
@@ -597,92 +726,174 @@
           <div class="slider-mentors">
             <div class="slider-item">
               <img
-                src="images/test-pic.jpg"
+                src="images/andreia-oca-pic.jpg"
                 alt=""
-                class="slider-item-human-photo"
+                class="slider-item-human-photo mb-1"
               />
               <div class="slider-item-inner slider-item-inner-mentors">
-                <img
-                  src="images/linkedin-white-icon.png"
-                  alt=""
-                  class="mt-4 judge-linkedin-icon"
-                />
-                <p class="mt-3">Andrei Pitis</p>
+                <a
+                  href="https://www.linkedin.com/in/andreia-irina-ocanoaia/"
+                  target="_blank"
+                  style="color: white !important"
+                >
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Andreia Ocanoaia</p>
+              </div>
+            </div>
+            <div class="slider-item">
+              <img
+                src="images/stefan-iordache-pic.jpg"
+                alt=""
+                class="slider-item-human-photo mb-1"
+              />
+              <div class="slider-item-inner slider-item-inner-mentors">
+                <a
+                  href="https://www.linkedin.com/in/stefan-d-iordache/"
+                  target="_blank"
+                  style="color: white !important"
+                >
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Stefan Iordache</p>
+              </div>
+            </div>
+            <div class="slider-item">
+              <img
+                src="images/radu-dumitrescu-pic.jpg"
+                alt=""
+                class="slider-item-human-photo mb-1"
+              />
+              <div class="slider-item-inner slider-item-inner-mentors">
+                <a
+                  href="https://www.linkedin.com/in/radu-andrei-dumitrescu/"
+                  target="_blank"
+                  style="color: white !important"
+                >
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Radu Dumitrescu</p>
+              </div>
+            </div>
+            <div class="slider-item">
+              <img
+                src="images/bogdan-vlad-pic.jpg"
+                alt=""
+                class="slider-item-human-photo mb-1"
+              />
+              <div class="slider-item-inner slider-item-inner-mentors">
+                <a
+                  href="https://www.linkedin.com/in/iulian-bogdan-vlad/"
+                  target="_blank"
+                  style="color: white !important"
+                >
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Bogdan Vlad</p>
+              </div>
+            </div>
+            <div class="slider-item">
+              <img
+                src="images/alex-filip-pic.jpg"
+                alt=""
+                class="slider-item-human-photo mb-1"
+              />
+              <div class="slider-item-inner slider-item-inner-mentors">
+                <a
+                  href="https://www.linkedin.com/in/alexandru-catalin-filip-bb2809184/"
+                  target="_blank"
+                  style="color: white !important"
+                >
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Alexandru Filip</p>
+              </div>
+            </div>
+            <div class="slider-item">
+              <img
+                src="images/alex-barcircea-pic.jpg"
+                alt=""
+                class="slider-item-human-photo mb-1"
+              />
+              <div class="slider-item-inner slider-item-inner-mentors">
+                <a href="#" target="_blank" style="color: white !important">
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Adrian Bacircea</p>
+              </div>
+            </div>
+            <div class="slider-item">
+              <img
+                src="images/marius-nita-pic.jpg"
+                alt=""
+                class="slider-item-human-photo mb-1"
+              />
+              <div class="slider-item-inner slider-item-inner-mentors">
+                <a
+                  href="https://www.linkedin.com/in/marius-nita-a06449103/"
+                  target="_blank"
+                  style="color: white !important"
+                >
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Marius Nita</p>
+              </div>
+            </div>
+            <div class="slider-item">
+              <img
+                src="images/dragos-bostan-pic.jpg"
+                alt=""
+                class="slider-item-human-photo mb-1"
+              />
+              <div class="slider-item-inner slider-item-inner-mentors">
+                <a
+                  href="https://www.linkedin.com/in/dragosbostan/"
+                  target="_blank"
+                  style="color: white !important"
+                >
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Dragos Bostan</p>
               </div>
             </div>
             <div class="slider-item">
               <img
                 src="images/test-pic.jpg"
                 alt=""
-                class="slider-item-human-photo"
+                class="slider-item-human-photo mb-1"
               />
               <div class="slider-item-inner slider-item-inner-mentors">
-                <img
-                  src="images/linkedin-white-icon.png"
-                  alt=""
-                  class="mt-4 judge-linkedin-icon"
-                />
-                <p class="mt-3">Andrei Pitis</p>
-              </div>
-            </div>
-            <div class="slider-item">
-              <img
-                src="images/test-pic.jpg"
-                alt=""
-                class="slider-item-human-photo"
-              />
-              <div class="slider-item-inner slider-item-inner-mentors">
-                <img
-                  src="images/linkedin-white-icon.png"
-                  alt=""
-                  class="mt-4 judge-linkedin-icon"
-                />
-                <p class="mt-3">Andrei Pitis</p>
-              </div>
-            </div>
-            <div class="slider-item">
-              <img
-                src="images/test-pic.jpg"
-                alt=""
-                class="slider-item-human-photo"
-              />
-              <div class="slider-item-inner slider-item-inner-mentors">
-                <img
-                  src="images/linkedin-white-icon.png"
-                  alt=""
-                  class="mt-4 judge-linkedin-icon"
-                />
-                <p class="mt-3">Andrei Pitis</p>
-              </div>
-            </div>
-            <div class="slider-item">
-              <img
-                src="images/test-pic.jpg"
-                alt=""
-                class="slider-item-human-photo"
-              />
-              <div class="slider-item-inner slider-item-inner-mentors">
-                <img
-                  src="images/linkedin-white-icon.png"
-                  alt=""
-                  class="mt-4 judge-linkedin-icon"
-                />
-                <p class="mt-3">Andrei Pitis</p>
-              </div>
-            </div>
-            <div class="slider-item">
-              <img
-                src="images/test-pic.jpg"
-                alt=""
-                class="slider-item-human-photo"
-              />
-              <div class="slider-item-inner slider-item-inner-mentors">
-                <img
-                  src="images/linkedin-white-icon.png"
-                  alt=""
-                  class="mt-4 judge-linkedin-icon"
-                />
-                <p class="mt-3">Andrei Pitis</p>
+                <a href="#" target="_blank" style="color: white !important">
+                  <i
+                    class="mdi mdi-linkedin"
+                    style="font-size: 2em !important"
+                  ></i
+                ></a>
+                <p class="">Dragos Apostol</p>
               </div>
             </div>
           </div>
@@ -696,7 +907,7 @@
           <div class="col-lg-12 mt-4">
             <div class="text-center mt-4">
               <h3 class="title mt-4" style="font-size: 2em !important">
-                Sponsors
+                Partners
               </h3>
             </div>
           </div>
@@ -704,7 +915,7 @@
           <div class="row mt-5">
             <div class="col-lg-3 mb-4">
               <div class="sponsor-logo">
-                <img src="images/sponsor-logo.jpg" alt="" />
+                <img src="images/genezio-logo.jpg" alt="" />
               </div>
             </div>
             <div class="col-lg-3 mb-4">
@@ -714,32 +925,7 @@
             </div>
             <div class="col-lg-3 mb-4">
               <div class="sponsor-logo">
-                <img src="images/sponsor-logo.jpg" alt="" />
-              </div>
-            </div>
-            <div class="col-lg-3 mb-4">
-              <div class="sponsor-logo">
-                <img src="images/sponsor-logo.jpg" alt="" />
-              </div>
-            </div>
-            <div class="col-lg-3 mb-4">
-              <div class="sponsor-logo">
-                <img src="images/sponsor-logo.jpg" alt="" />
-              </div>
-            </div>
-            <div class="col-lg-3 mb-4">
-              <div class="sponsor-logo">
-                <img src="images/sponsor-logo.jpg" alt="" />
-              </div>
-            </div>
-            <div class="col-lg-3 mb-4">
-              <div class="sponsor-logo">
-                <img src="images/sponsor-logo.jpg" alt="" />
-              </div>
-            </div>
-            <div class="col-lg-3 mb-4">
-              <div class="sponsor-logo">
-                <img src="images/sponsor-logo.jpg" alt="" />
+                <img src="images/github-logo.jpg" alt="" />
               </div>
             </div>
           </div>
@@ -760,13 +946,13 @@
 
           <div class="row mt-1">
             <div class="col-lg-4 prize-elem-outer">
-              <img src="images/prize-3.jpg" alt="" class="prize-elem-img" />
+              <img src="images/prize-1.jpg" alt="" class="prize-elem-img" />
             </div>
             <div class="col-lg-4 prize-elem-outer">
               <img src="images/prize-2.jpg" alt="" class="prize-elem-img" />
             </div>
             <div class="col-lg-4 prize-elem-outer">
-              <img src="images/prize-1.jpg" alt="" class="prize-elem-img" />
+              <img src="images/prize-3.jpg" alt="" class="prize-elem-img" />
             </div>
           </div>
         </div>
@@ -1056,7 +1242,7 @@
               <a href="#judges" class="text-reset">Judges & Mentors</a>
             </p>
             <p>
-              <a href="#sponsors" class="text-reset">Sponsors & Prizes</a>
+              <a href="#sponsors" class="text-reset">Partners & Prizes</a>
             </p>
             <p>
               <a href="#contact" class="text-reset">Contact</a>
