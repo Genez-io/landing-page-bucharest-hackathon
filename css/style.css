@@ -1740,7 +1740,7 @@ textarea.form-control {
 #schedule {
   padding: 50px 0 13em 0;
   background-image: url(../images/schedule-bg.jpg);
-  background-position: center;
+  background-position: top;
   background-size: cover;
   color: white
 }
