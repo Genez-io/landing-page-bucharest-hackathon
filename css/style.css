@@ -1124,7 +1124,7 @@ hr {
 
 .bg-home-hack {
   padding: 260px 0 250px 0;
-  background-image: url(../images/hero-bg.jpg);
+  background-image: url(../images/hero-bg.webp);
   background-position: center;
   background-size: cover;
 }
@@ -1224,7 +1224,7 @@ hr {
 
 .bg-home-3 {
   padding: 280px 0 260px 0px;
-  background-image: url(../images/img-1.jpg);
+  background-image: url(../images/img-1.webp);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -1262,7 +1262,7 @@ hr {
 .bg-home-5 {
   position: relative;
   padding: 190px 0px 190px 0px;
-  background-image: url(../images/img-2.jpg);
+  background-image: url(../images/img-2.webp);
 }
 
 .home-registration-form {
@@ -1495,7 +1495,7 @@ hr {
 }
 
 .bg-counter {
-  background-image: url(../images/img-1.jpg);
+  background-image: url(../images/img-1.webp);
   background-position: center;
 }
 
@@ -1725,21 +1725,21 @@ textarea.form-control {
 
 #about-us {
   padding: 100px 0 100px 0;
-  background-image: url(../images/about-bg.jpg);
+  background-image: url(../images/about-bg.webp);
   background-position: center;
   background-size: cover;
 }
 
 #categories {
   padding: 100px 0 100px 0;
-  background-image: url(../images/categories-bg.jpg);
+  background-image: url(../images/categories-bg.webp);
   background-position: center;
   background-size: cover;
   color: white
 }
 #schedule {
   padding: 50px 0 13em 0;
-  background-image: url(../images/schedule-bg.jpg);
+  background-image: url(../images/schedule-bg.webp);
   background-position: top;
   background-size: cover;
   color: white
@@ -1747,7 +1747,7 @@ textarea.form-control {
 
 #judges {
   padding: 100px 0 100px 0;
-  background-image: url(../images/judges-bg.jpg);
+  background-image: url(../images/judges-bg.webp);
   background-position: center;
   background-size: cover;
   color: black
@@ -1755,7 +1755,7 @@ textarea.form-control {
 
 #contact {
   padding: 50px 0 50px 0;
-  background-image: url(../images/contact-bg.jpg);
+  background-image: url(../images/contact-bg.webp);
   background-position: center;
   background-size: cover;
   color: white
@@ -1763,7 +1763,7 @@ textarea.form-control {
 
 #faq {
   padding: 100px 0 100px 0;
-  background-image: url(../images/faq-bg.jpg);
+  background-image: url(../images/faq-bg.webp);
   background-position: top;
   background-size: cover;
   color: white
@@ -1879,7 +1879,7 @@ textarea.form-control {
 }
 
 .slider-item-inner {
-  background-image: url(../images/judge-bg.jpg);
+  background-image: url(../images/judge-bg.webp);
   background-position: top;
   background-size: cover;
   padding: 0.6em;
@@ -1889,7 +1889,7 @@ textarea.form-control {
 }
 
 .slider-item-inner-mentors {
-  background-image: url(../images/mentor-bg.jpg);
+  background-image: url(../images/mentor-bg.webp);
   color: white !important;
   box-shadow: 0px 0px 9px 0px #0000002b;
 }
@@ -1944,7 +1944,7 @@ img {
 
 #register-pannel {
   background-color: #ca0483;
-  background-image: url(../images/register-pannel-bg.jpg);
+  background-image: url(../images/register-pannel-bg.webp);
   background-position: top;
   background-size: cover;  padding: 2em;
   text-align: center;
