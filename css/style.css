@@ -2054,3 +2054,10 @@ img {
   content: url("../images/minus.svg");
 
 }
+
+
+@media (max-width: 400px) {
+  .bg-home-hack {
+    padding: 8em 0 250px 0;
+  }
+}
