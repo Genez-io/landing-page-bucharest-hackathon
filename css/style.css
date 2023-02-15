@@ -1944,10 +1944,11 @@ img {
 
 #register-pannel {
   background-color: #ca0483;
-  background-image: url(../images/register-pannel-bg.webp);
+  background-image: url(../images/register-bg.webp);
   background-position: top;
   background-size: cover;  padding: 2em;
   text-align: center;
+  padding: 50px 0 50px 0;
 }
 
 #register-pannel button {
