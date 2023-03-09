@@ -58,7 +58,7 @@ function fadeIn() {
 // client-slider
 
 const sliderJudges = tns({
-  container: ".slider-judges",
+  container: ".slider-jury",
   loop: true,
   items: 1,
   slideBy: "page",
@@ -69,7 +69,7 @@ const sliderJudges = tns({
   autoplayButtonOutput: false,
   mouseDrag: true,
   lazyload: true,
-  controlsContainer: "#customize-controls-judges",
+  controlsContainer: "#customize-controls-jury",
   responsive: {
     640: {
       items: 2
