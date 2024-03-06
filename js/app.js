@@ -1,3 +1,6 @@
+var notification = document.getElementById('custom-notification');
+notification.style.display = 'none';
+
 //  Window scroll sticky class add
 function windowScroll() {
   const navbar = document.getElementById("navbar");
@@ -129,6 +132,13 @@ newsLetterEmailInput.addEventListener('input', checkConditions);
 checkbox1.addEventListener('change', checkConditions);
 checkbox2.addEventListener('change', checkConditions);
 
+function showNotification() {
+  notification.style.display = 'block';
+  setTimeout(function () {
+    notification.style.display = 'none';
+  }, 5000); // Hide the notification after 5 seconds
+}
+
 newsLetterBtn.addEventListener("click", () => {
   const email = newsLetterEmailInput.value;
 
@@ -149,6 +159,7 @@ newsLetterBtn.addEventListener("click", () => {
     .then((response) => response.json())
     .then((data) => {
       console.log("Success:", data);
+      showNotification();
       newsLetterEmailInput.value = "";
       checkbox1.checked = false;
       checkbox2.checked = false;
