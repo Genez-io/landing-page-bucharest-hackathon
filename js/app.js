@@ -43,7 +43,7 @@ var spy = new Gumshoe("#navbar-navlist a", {
 function fadeIn() {
   var fade = document.getElementById("error-msg");
   var opacity = 0;
-  var intervalID = setInterval(function() {
+  var intervalID = setInterval(function () {
     if (opacity < 1) {
       opacity = opacity + 0.5;
       fade.style.opacity = opacity;
@@ -104,3 +104,60 @@ const sliderMentors = tns({
     }
   }
 });
+
+// Start of Newsletter
+const newsLetterEmailInput = document.getElementById("newsletter-email-input")
+const newsLetterBtn = document.getElementById("newsletter-btn")
+const checkbox1 = document.getElementById('checkbox1-newsletter');
+const checkbox2 = document.getElementById('checkbox2-newsletter');
+
+// Function to check if all conditions are met to enable the button
+function checkConditions() {
+  const isEmailValid = newsLetterEmailInput.value.trim() !== '';
+  const isCheckbox1Checked = checkbox1.checked;
+  const isCheckbox2Checked = checkbox2.checked;
+
+  // Add or remove the 'disabled' class based on conditions
+  if (isEmailValid && isCheckbox1Checked && isCheckbox2Checked) {
+    newsLetterBtn.classList.remove('disabled');
+  } else {
+    newsLetterBtn.classList.add('disabled');
+  }
+}
+
+newsLetterEmailInput.addEventListener('input', checkConditions);
+checkbox1.addEventListener('change', checkConditions);
+checkbox2.addEventListener('change', checkConditions);
+
+newsLetterBtn.addEventListener("click", () => {
+  const email = newsLetterEmailInput.value;
+
+  const data = {
+    email_address: email,
+  };
+
+  const url = "https://ahkxlexqszfsqoe33tl5im4b4y0umhdv.lambda-url.us-east-1.on.aws/HubSpotService/listMembers"
+
+  fetch(url, {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+      newsLetterEmailInput.value = "";
+      checkbox1.checked = false;
+      checkbox2.checked = false;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      newsLetterEmailInput.value = "";
+      checkbox1.checked = false;
+      checkbox2.checked = false;
+    });
+})
+// End of Newsletter
