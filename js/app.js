@@ -121,7 +121,7 @@ function checkConditions() {
   const isCheckbox2Checked = checkbox2.checked;
 
   // Add or remove the 'disabled' class based on conditions
-  if (isEmailValid && isCheckbox1Checked && isCheckbox2Checked) {
+  if (isEmailValid && isCheckbox1Checked) {
     newsLetterBtn.classList.remove('disabled');
   } else {
     newsLetterBtn.classList.add('disabled');
