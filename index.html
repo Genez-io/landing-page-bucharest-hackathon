@@ -121,7 +121,7 @@
               <a class="nav-link" href="#faq">FAQ</a>
             </li>
             <li class="nav-item nav-register-custom-btn">
-              <a class="nav-link" href="#newsletter"><span>NEWSLETTER</span></a>
+              <a class="nav-link" href="#register"><span>REGISTER</span></a>
             </li>
           </ul>
         </div>
@@ -249,102 +249,86 @@
         </div>
       </div>
     </section>
-    <div id="newsletter"></div>
+    
     <!-- END ABOUT -->
-    <section class="section px-2" id="register-pannel">
+
+    <div id="register"></div>
+    <section class="section px-5" id="register-pannel">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-11 d-flex align-items-center flex-column" style="color: white">
-            <h3 class="mb-3 title" style="font-size: 2em">
-              Connect, collaborate, create: Get into The Bucharest Hackathon experience!
-            </h3>
-
-            <p class="w-100 fs-5">
-              Subscribe for registration dates, exclusive challenges, epic prizes, insider tips &
-              more!
+          <div class="col-lg-7" style="color: white">
+            <p>
+              Whether you already know your way around blockchain, AI, devtools
+              or you're just starting, grab a seat, the event is open to all
+              tech enthusiasts!
             </p>
-
-            <input
-              type="text"
-              id="newsletter-email-input"
-              name="email-input"
-              placeholder="andrei.alexandrescu@dlang.com"
-              class="mb-3 w-50"
-              style="
-                border: none;
-                border-bottom: 1px solid white;
-                color: white;
-                background-color: transparent;
-                outline: none;
-              "
-            />
-
-            <div class="d-flex align-items-center flex-column mb-4">
-              <div class="d-flex">
-                <input
-                  style="width: 15px"
-                  type="checkbox"
-                  id="checkbox1-newsletter"
-                  name="checkbox"
-                  class="mx-2"
-                />
-                <p class="m-0">
-                  By checking this box, you confirm that you have read and agree to our
-                  <a
-                    href="https://docs.google.com/document/d/1zQjMc9esza4b1MIFFduhm6rHsecTeP4_/edit"
-                    target="_blank"
-                  >
-                    <span style="color: black">T&C</span>
-                  </a>
-                </p>
-              </div>
-
-              <div class="d-flex mt-2">
-                <input
-                  style="width: 15px"
-                  type="checkbox"
-                  id="checkbox2-newsletter"
-                  name="checkbox"
-                  class="mx-2"
-                />
-                <p class="m-0">
-                  You confirm that you would like to receive updates and marketing emails from The
-                  Bucharest Hackathon. You can unsubscribe anytime.
-                </p>
-              </div>
-            </div>
-            <button
-              href="https://docs.google.com/document/d/1vn714RBXvmuh0unAHtTn04zl6AVTvu6Um91O08UnCIU/edit?usp=sharing"
-              target="_blank"
-              class="btn btn-primary nav-register-custom-btn px-4 disabled"
-              id="newsletter-btn"
-              style="
-                background: none;
-                border: 2px solid white !important;
-                border-radius: 5px;
-                color: white !important;
-              "
-            >
-              Subscribe
-            </button>
-            <!--Register until: <b>10th of March</b>-->
-            <!--<p>
+          </p>
+              The Bucharest Hackathon requires physical attendance and you will
+              be able to participate in teams of 2 to 4 members. If you already
+              have a team, you can enroll here. If you don't have a team yet, you won't be able to register now. Keep your eyes on our website and subscribe to our newsletter to find out when you can register without a team. The registration is free, you have
+              everything to gain and nothing to lose!
+            </p>
+          </p>
+              <!--Register until: <b>10th of March</b>-->
+            </p>
+            <p>
               <b>Limited spots available. Hurry up and register! </b>
-            </p>-->
+            </p>
           </div>
-          <!-- <div class="col-lg-12 mt-3">
+          <div class="col-lg-12 mt-3">
             <a
               type="button"
               class="btn btn-primary nav-register-custom-btn px-5"
-              href="#"
               target="_blank"
-              style="    background: none;
+              style="background: none;
               border: 2px solid white !important;
               border-radius: 5px; color: white !important;"
+              data-toggle="modal" data-target="#exampleModal"
             >
               REGISTER
             </a>
-          </div> -->
+<!-- start of register modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+              </div>
+              <div class="modal-body">
+                <p>Register for The Bucharest Hackathon 2024!
+Choose one of the following forms to fill in your data. Every team member must register once, on one of the platforms below, for the participation to be approved.</p>
+              </div>
+              <div class="modal-footer d-flex align-items-center justify-content-center">
+
+               <a
+              type="button"
+              class="btn btn-primary nav-register-custom-btn px-5"
+              target="_blank"
+              style="background: none;
+              border: 2px solid black !important;
+              border-radius: 5px; color: black !important;"
+              href="https://forms.gle/aUqKTCNvK6TcRWdk9"
+              >
+              Google
+            </a>
+            <a
+            type="button"
+            class="btn btn-primary nav-register-custom-btn px-5"
+            target="_blank"
+            style="background: none;
+            border: 2px solid black !important;
+            border-radius: 5px; color: black !important;"
+            href="https://lu.ma/pwtt2fhh"
+            >
+              Luma
+            </a>
+                <!-- You can add additional buttons here if needed -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of register modal -->
+          </div>
         </div>
       </div>
     </section>
@@ -1796,6 +1780,90 @@
       </div>
     </section>
     <!-- END FAQ -->
+    
+    <!-- START NEWSLETTER -->
+    <div id="newsletter"></div>
+    <section class="section px-2" id="register-pannel">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-11 d-flex align-items-center flex-column" style="color: white">
+            <h3 class="mb-3 title" style="font-size: 2em">
+              Connect, collaborate, create: Get into The Bucharest Hackathon experience!
+            </h3>
+
+            <p class="w-100 fs-5">
+              Subscribe for registration dates, exclusive challenges, epic prizes, insider tips &
+              more!
+            </p>
+
+            <input
+              type="text"
+              id="newsletter-email-input"
+              name="email-input"
+              placeholder="andrei.alexandrescu@dlang.com"
+              class="mb-3 w-50"
+              style="
+                border: none;
+                border-bottom: 1px solid white;
+                color: white;
+                background-color: transparent;
+                outline: none;
+              "
+            />
+
+            <div class="d-flex align-items-center flex-column mb-4">
+              <div class="d-flex">
+                <input
+                  style="width: 15px"
+                  type="checkbox"
+                  id="checkbox1-newsletter"
+                  name="checkbox"
+                  class="mx-2"
+                />
+                <p class="m-0">
+                  By checking this box, you confirm that you have read and agree to our
+                  <a
+                    href="https://docs.google.com/document/d/1zQjMc9esza4b1MIFFduhm6rHsecTeP4_/edit"
+                    target="_blank"
+                  >
+                    <span style="color: black">T&C</span>
+                  </a>
+                </p>
+              </div>
+
+              <div class="d-flex mt-2">
+                <input
+                  style="width: 15px"
+                  type="checkbox"
+                  id="checkbox2-newsletter"
+                  name="checkbox"
+                  class="mx-2"
+                />
+                <p class="m-0">
+                  You confirm that you would like to receive updates and marketing emails from The
+                  Bucharest Hackathon. You can unsubscribe anytime.
+                </p>
+              </div>
+            </div>
+            <button
+              href="https://docs.google.com/document/d/1vn714RBXvmuh0unAHtTn04zl6AVTvu6Um91O08UnCIU/edit?usp=sharing"
+              target="_blank"
+              class="btn btn-primary nav-register-custom-btn px-4 disabled"
+              id="newsletter-btn"
+              style="
+                background: none;
+                border: 2px solid white !important;
+                border-radius: 5px;
+                color: white !important;
+              "
+            >
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END NEWSLETTER -->
 
     <!-- START FOOTER -->
     <section class="bg-footer bg-light" id="footer">
@@ -1926,5 +1994,8 @@
     <script src="js/tiny-slider.js"></script>
     <!-- CUSTOM JS -->
     <script src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
