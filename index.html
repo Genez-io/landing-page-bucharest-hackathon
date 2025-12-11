@@ -72,6 +72,9 @@
   </script>
 
   <body>
+    <!-- PARTICLE BACKGROUND -->
+    <canvas id="particles-canvas"></canvas>
+
     <!-- START  NAVBAR -->
     <nav
       class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom sticky sticky-light"
@@ -133,7 +136,7 @@
     <!-- END NAVBAR -->
 
     <!-- START HOME -->
-    <section class="bg-home-hack bg-light" id="home" style="height: 100vh">
+    <section class="bg-home-hack" id="home" style="height: 100vh">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-9">
@@ -223,7 +226,7 @@
 
           <div class="col-lg-12">
             <div class="text-center">
-              <h3 class="title mt-3" style="font-size: 2em !important; color: black !important">
+              <h3 class="title mt-3" style="font-size: 2em !important">
                 <span style="color: #de058a !important"> About </span> The Bucharest Hackathon
               </h3>
             </div>
@@ -231,14 +234,14 @@
         </div>
 
         <div class="col-lg-8 mx-auto mt-3">
-          <p class="text-center" style="color: black !important">
+          <p class="text-center">
             Welcome to the second edition of <b>The Bucharest Hackathon</b>, a dynamic weekend-long
             event where like minded programmers from Romania and the region gather to work on
             groundbreaking software projects and solve tomorrow's coding challenges using the
             latest, most cutting-edge technologies available. <br /><br />
 
             This year we're going all in on bridging the gap between the digital realm and the real
-            world via <b>blockchain</b>, <b>AI</b> and <b>devtools</b>. We bring the resources, the
+            world via <b style="color: #de058a;">blockchain</b>, <b style="color: #de058a;">AI</b> and <b style="color: #de058a;">devtools</b>. We bring the resources, the
             fuel, the mentors and support you need to learn new skills and build a unique product.
             Have fun with friends, and make new ones, while experimenting with new-age technologies!
             <br /><br />
@@ -304,8 +307,8 @@ Choose one of the following forms to fill in your data. Every team member must r
               class="btn btn-primary nav-register-custom-btn px-5"
               target="_blank"
               style="background: none;
-              border: 2px solid black !important;
-              border-radius: 5px; color: black !important;"
+              border: 2px solid #de058a !important;
+              border-radius: 12px; color: #de058a !important;"
               href="https://forms.gle/aUqKTCNvK6TcRWdk9"
               >
               Google
@@ -315,8 +318,8 @@ Choose one of the following forms to fill in your data. Every team member must r
             class="btn btn-primary nav-register-custom-btn px-5"
             target="_blank"
             style="background: none;
-            border: 2px solid black !important;
-            border-radius: 5px; color: black !important;"
+            border: 2px solid #de058a !important;
+            border-radius: 12px; color: #de058a !important;"
             href="https://lu.ma/pwtt2fhh"
             >
               Luma
@@ -487,7 +490,7 @@ Choose one of the following forms to fill in your data. Every team member must r
 
         <div class="row">
           <div class="col-lg-5 mx-auto mt-4 text-center">
-            <h2 style="color: black">13 April</h2>
+            <h2 style="color: #de058a">13 April</h2>
             <h3>9:30-10:30</h3>
             <p style="font-size: 1.4em; font-weight: 300">
               Check-in and welcome coffee
@@ -498,7 +501,7 @@ Choose one of the following forms to fill in your data. Every team member must r
             <p style="font-size: 1.4em; font-weight: 300">coding starts</p>
           </div>
           <div class="col-lg-5 mx-auto mt-4 text-center">
-            <h2 style="color: black">14 April</h2>
+            <h2 style="color: #de058a">14 April</h2>
             <h3>11:00</h3>
             <p style="font-size: 1.4em; font-weight: 300">coding ends</p>
             <h3>11:00-13:30</h3>
@@ -2072,12 +2075,13 @@ Choose one of the following forms to fill in your data. Every team member must r
                 />
                 <p class="m-0">
                   By checking this box, you confirm that you have read and agree to our
-                  <a
-                    href="https://docs.google.com/document/d/1Q5l1QYCJefBQAlFF7Omx58_llhFjSsCB/edit#heading=h.gjdgxs"
-                    target="_blank"
+<a
+                  href="https://docs.google.com/document/d/1Q5l1QYCJefBQAlFF7Omx58_llhFjSsCB/edit#heading=h.gjdgxs"
+                  target="_blank"
+                  style="color: #de058a !important;"
                   >
-                    <span style="color: black">T&C</span>
-                  </a>
+                  T&C
+                </a>
                 </p>
               </div>
 
@@ -2116,7 +2120,7 @@ Choose one of the following forms to fill in your data. Every team member must r
     <!-- END NEWSLETTER -->
 
     <!-- START FOOTER -->
-    <section class="bg-footer bg-light" id="footer">
+    <section class="bg-footer" id="footer">
       <div class="container">
         <div
           class="row text-center justify-content-between"
@@ -2124,7 +2128,7 @@ Choose one of the following forms to fill in your data. Every team member must r
         >
           <div class="col-md-4">
             <div class="text-sm-start mt-3 mt-sm-0">
-              <img loading="lazy" src="images/logo-black-big.png" alt="" height="100" />
+              <img loading="lazy" src="images/logo-light.png" alt="" height="100" style="filter: drop-shadow(0 0 10px rgba(222, 5, 138, 0.3));" />
             </div>
           </div>
           <div
@@ -2194,11 +2198,11 @@ Choose one of the following forms to fill in your data. Every team member must r
                 </a>
               </div>
               <p class="mb-5">
-                <a href="mailto:sponsorship@bucharesthackathon.com" style="color: black">
+                <a href="mailto:sponsorship@bucharesthackathon.com">
                   sponsorship@bucharesthackathon.com
                 </a>
 
-                <a href="mailto:info@bucharesthackathon.com" style="color: black">
+                <a href="mailto:info@bucharesthackathon.com">
                   info@bucharesthackathon.com
                 </a>
               </p>
@@ -2206,7 +2210,6 @@ Choose one of the following forms to fill in your data. Every team member must r
                 <a
                   href="https://drive.google.com/drive/u/3/folders/1vgiX1-X9GC4Kxx2IMrEzi02KLvd1YYbJ"
                   target="_blank"
-                  style="color: black"
                 >
                   Brand Assets
                 </a>
@@ -2216,15 +2219,15 @@ Choose one of the following forms to fill in your data. Every team member must r
                   href="https://docs.google.com/document/d/1Q5l1QYCJefBQAlFF7Omx58_llhFjSsCB/edit#heading=h.gjdgxs"
                   target="_blank"
                 >
-                  <span style="color: black">Terms and Conditions</span>
+                  Terms and Conditions
                 </a>
 
-                <span><span style="color: #de058a !important">|</span></span>
+                <span style="color: #de058a !important"> | </span>
 
                 <a
                   href="https://docs.google.com/document/d/12yzVeXS3OYyEeoHyAQJ_K7vYLprJ5kEC/edit?rtpof=true"
                   target="_blank"
-                  ><span style="color: black">Privacy Policy</span></a
+                  >Privacy Policy</a
                 >
               </p>
 
