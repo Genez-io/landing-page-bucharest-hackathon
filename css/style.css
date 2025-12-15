@@ -2140,44 +2140,170 @@ textarea.form-control {
   background-color: #ca0483 !important;
 }
 
+/* Dark mode judges section with glassmorphism and particles */
+.judges-dark-section {
+  background: #141414 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated particle background */
+.judges-dark-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(222, 5, 138, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(138, 5, 222, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(222, 5, 138, 0.1) 0%, transparent 50%);
+  animation: particleFloat 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+    opacity: 0.7;
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+    opacity: 0.6;
+  }
+}
+
+.judges-dark-section .title {
+  color: white !important;
+  text-shadow: 0 0 20px rgba(222, 5, 138, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.judges-dark-section .container {
+  position: relative;
+  z-index: 1;
+}
+
 .slider-item {
   text-align: center;
   padding: 0;
-  color: black;
+  color: white;
   padding: 0.5em;
+  position: relative;
   /* margin: 1em; */
 }
 
+/* Black card with gradient to pink at bottom */
 .slider-item-inner {
-  background-image: url(../images/judge-bg.webp);
-  background-position: top;
-  background-size: cover;
-  padding: 0.6em;
-  padding-top: 5em !important;
-  margin-top: -5em !important;
-  box-shadow: 0px 0px 9px 0px #0000002b;
+  background: linear-gradient(to bottom, #000000 0%, rgba(222, 5, 138, 0.5) 100%) !important;
+  background-image: linear-gradient(to bottom, #000000 0%, rgba(222, 5, 138, 0.5) 100%) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  border-radius: 24px !important;
+  padding: 2.5em 2em 2.5em 2em !important;
+  margin-top: 0 !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-align: center !important;
+}
+
+/* No gradient effects - removed per user request */
+.slider-item-inner::after {
+  display: none !important;
+}
+
+.slider-item-inner::before {
+  display: none !important;
+}
+
+.slider-item-inner:hover {
+  transform: translateY(-12px) scale(1.02) !important;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(222, 5, 138, 0.5) !important;
+}
+
+.slider-item-inner > * {
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 .slider-item-inner-mentors {
-  background-image: url(../images/mentor-bg.webp);
+  background: linear-gradient(to bottom, #000000 0%, rgba(222, 5, 138, 0.5) 100%) !important;
+  background-image: linear-gradient(to bottom, #000000 0%, rgba(222, 5, 138, 0.5) 100%) !important;
   color: white !important;
-  box-shadow: 0px 0px 9px 0px #0000002b;
+  border: none !important;
+  border-radius: 24px !important;
+  padding: 2.5em 2em 2.5em 2em !important;
+  margin-top: 0 !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-align: center !important;
+}
+
+.slider-item-inner-mentors:hover {
+  transform: translateY(-12px) scale(1.02) !important;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(222, 5, 138, 0.5) !important;
 }
 
 .slider-item-inner-mentors p {
   color: white !important;
+  font-weight: 400;
+  line-height: 1.3em;
+  font-size: 1.3em;
+}
+
+/* Mentor company name in pink */
+.slider-item-inner-mentors p[style*="font-size: 1em"] {
+  color: #de058a !important;
 }
 
 .slider-item-human-photo {
-  border-radius: 50%;
-  width: 60%;
+  border-radius: 50% !important;
+  width: 50% !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  transition: all 0.5s ease !important;
+  position: relative !important;
+  z-index: 2 !important;
+  filter: brightness(1.05) !important;
+  margin: 0 auto 1.5em auto !important;
+  display: block !important;
+}
+
+.slider-item-inner:hover .slider-item-human-photo {
+  transform: scale(1.05) !important;
+  box-shadow: none !important;
+  filter: brightness(1.1) !important;
 }
 
 .slider-item p {
   font-weight: 400;
   line-height: 1.3em;
-  color: black;
+  color: white !important;
   font-size: 1.3em;
+  margin-bottom: 0.5em !important;
+}
+
+/* Company name in pink - extra spacing below */
+.slider-item-inner p[style*="font-size: 1em"] {
+  color: #de058a !important;
+  margin-bottom: 1.5em !important;
 }
 
 .slider-container {
@@ -2209,6 +2335,21 @@ img {
 }
 .controls li:hover {
   cursor: pointer;
+}
+
+/* Dark mode controls for judges section with glow */
+.judges-dark-section .controls {
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 10px rgba(222, 5, 138, 0.3);
+  transition: all 0.3s ease;
+}
+
+.judges-dark-section .controls li:hover {
+  color: #de058a;
+  text-shadow: 
+    0 0 20px rgba(222, 5, 138, 0.8),
+    0 0 40px rgba(222, 5, 138, 0.5);
+  transform: scale(1.1);
 }
 
 #register-pannel {
