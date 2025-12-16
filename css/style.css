@@ -2202,8 +2202,8 @@ textarea.form-control {
 
 /* Black card with gradient to pink at bottom */
 .slider-item-inner {
-  background: linear-gradient(to bottom, #000000 0%, rgba(222, 5, 138, 0.5) 100%) !important;
-  background-image: linear-gradient(to bottom, #000000 0%, rgba(222, 5, 138, 0.5) 100%) !important;
+  background: linear-gradient(to bottom, #000000 0%, #000000 40%, rgba(222, 5, 138, 0.5) 100%) !important;
+  background-image: linear-gradient(to bottom, #000000 0%, #000000 40%, rgba(222, 5, 138, 0.5) 100%) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   border: none !important;
@@ -2215,6 +2215,10 @@ textarea.form-control {
   position: relative !important;
   overflow: hidden !important;
   text-align: center !important;
+  min-height: 400px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
 }
 
 /* No gradient effects - removed per user request */
@@ -2239,8 +2243,8 @@ textarea.form-control {
 }
 
 .slider-item-inner-mentors {
-  background: linear-gradient(to bottom, #000000 0%, rgba(222, 5, 138, 0.5) 100%) !important;
-  background-image: linear-gradient(to bottom, #000000 0%, rgba(222, 5, 138, 0.5) 100%) !important;
+  background: linear-gradient(to bottom, #000000 0%, #000000 40%, rgba(222, 5, 138, 0.5) 100%) !important;
+  background-image: linear-gradient(to bottom, #000000 0%, #000000 40%, rgba(222, 5, 138, 0.5) 100%) !important;
   color: white !important;
   border: none !important;
   border-radius: 24px !important;
@@ -2251,6 +2255,10 @@ textarea.form-control {
   position: relative !important;
   overflow: hidden !important;
   text-align: center !important;
+  min-height: 400px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
 }
 
 .slider-item-inner-mentors:hover {
@@ -2270,6 +2278,13 @@ textarea.form-control {
 /* Mentor company name in pink */
 .slider-item-inner-mentors p[style*="font-size: 1em"] {
   color: #de058a !important;
+  margin-top: 0 !important;
+  margin-bottom: 1.5em !important;
+  height: 2em !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .slider-item-human-photo {
@@ -2284,12 +2299,23 @@ textarea.form-control {
   filter: brightness(1.05) !important;
   margin: 0 auto 1.5em auto !important;
   display: block !important;
+  flex-shrink: 0 !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
 }
 
 .slider-item-inner:hover .slider-item-human-photo {
   transform: scale(1.05) !important;
   box-shadow: none !important;
   filter: brightness(1.1) !important;
+}
+
+/* LinkedIn icon alignment */
+.slider-item-inner a,
+.slider-item-inner-mentors a {
+  margin-top: 1.5em !important;
+  flex-shrink: 0 !important;
 }
 
 .slider-item p {
@@ -2300,10 +2326,28 @@ textarea.form-control {
   margin-bottom: 0.5em !important;
 }
 
+/* Name paragraph - fixed height for alignment */
+.slider-item-inner p.mb-0,
+.slider-item-inner-mentors p.mb-0 {
+  height: 3.5em !important;
+  margin-bottom: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  line-height: 1.2em !important;
+}
+
 /* Company name in pink - extra spacing below */
 .slider-item-inner p[style*="font-size: 1em"] {
   color: #de058a !important;
+  margin-top: 0 !important;
   margin-bottom: 1.5em !important;
+  height: 2em !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .slider-container {
