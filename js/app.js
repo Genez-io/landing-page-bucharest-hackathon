@@ -1,17 +1,18 @@
 // ============================================
-// PARTICLE BACKGROUND ANIMATION
+// PARTICLE BACKGROUND ANIMATION - OPTIMIZED
 // ============================================
 class ParticleBackground {
   constructor(canvasId) {
     this.canvas = document.getElementById(canvasId);
     if (!this.canvas) return;
     
-    this.ctx = this.canvas.getContext('2d');
+    this.ctx = this.canvas.getContext('2d', { alpha: true, desynchronized: true });
     this.particles = [];
-    this.particleCount = 80;
-    this.connectionDistance = 150;
+    this.particleCount = 50; // Reduced from 80
+    this.connectionDistance = 120; // Reduced from 150
     this.mousePosition = { x: null, y: null };
     this.animationId = null;
+    this.isVisible = true;
     
     this.init();
     this.animate();
@@ -43,19 +44,35 @@ class ParticleBackground {
   }
 
   setupEventListeners() {
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-      this.resize();
-      this.createParticles();
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        this.resize();
+        this.createParticles();
+      }, 250);
     });
 
+    // Throttle mouse move
+    let mouseTimeout;
     window.addEventListener('mousemove', (e) => {
-      this.mousePosition.x = e.clientX;
-      this.mousePosition.y = e.clientY;
+      if (!mouseTimeout) {
+        mouseTimeout = setTimeout(() => {
+          this.mousePosition.x = e.clientX;
+          this.mousePosition.y = e.clientY;
+          mouseTimeout = null;
+        }, 16); // ~60fps
+      }
     });
 
     window.addEventListener('mouseout', () => {
       this.mousePosition.x = null;
       this.mousePosition.y = null;
+    });
+
+    // Pause animation when tab is hidden
+    document.addEventListener('visibilitychange', () => {
+      this.isVisible = !document.hidden;
     });
   }
 
@@ -67,20 +84,39 @@ class ParticleBackground {
   }
 
   drawConnections() {
-    for (let i = 0; i < this.particles.length; i++) {
-      for (let j = i + 1; j < this.particles.length; j++) {
-        const dx = this.particles[i].x - this.particles[j].x;
-        const dy = this.particles[i].y - this.particles[j].y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+    // Optimized: only check nearby particles
+    const gridSize = this.connectionDistance;
+    const grid = new Map();
+    
+    // Build spatial grid
+    for (let particle of this.particles) {
+      const key = `${Math.floor(particle.x / gridSize)},${Math.floor(particle.y / gridSize)}`;
+      if (!grid.has(key)) grid.set(key, []);
+      grid.get(key).push(particle);
+    }
+    
+    // Check only neighboring cells
+    for (let [key, particles] of grid) {
+      for (let i = 0; i < particles.length; i++) {
+        const p1 = particles[i];
+        
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dx = p1.x - p2.x;
+          const dy = p1.y - p2.y;
+          const distSq = dx * dx + dy * dy;
+          const maxDistSq = this.connectionDistance * this.connectionDistance;
 
-        if (distance < this.connectionDistance) {
-          const opacity = (1 - distance / this.connectionDistance) * 0.3;
-          this.ctx.beginPath();
-          this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
-          this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
-          this.ctx.strokeStyle = `rgba(222, 5, 138, ${opacity})`;
-          this.ctx.lineWidth = 0.5;
-          this.ctx.stroke();
+          if (distSq < maxDistSq) {
+            const distance = Math.sqrt(distSq);
+            const opacity = (1 - distance / this.connectionDistance) * 0.3;
+            this.ctx.beginPath();
+            this.ctx.moveTo(p1.x, p1.y);
+            this.ctx.lineTo(p2.x, p2.y);
+            this.ctx.strokeStyle = `rgba(222, 5, 138, ${opacity})`;
+            this.ctx.lineWidth = 0.5;
+            this.ctx.stroke();
+          }
         }
       }
     }
@@ -99,13 +135,15 @@ class ParticleBackground {
         particle.vy *= -1;
       }
 
-      // Mouse interaction
+      // Mouse interaction - simplified
       if (this.mousePosition.x && this.mousePosition.y) {
         const dx = this.mousePosition.x - particle.x;
         const dy = this.mousePosition.y - particle.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+        const distSq = dx * dx + dy * dy;
+        const maxDistSq = 150 * 150;
 
-        if (distance < 150) {
+        if (distSq < maxDistSq) {
+          const distance = Math.sqrt(distSq);
           const force = (150 - distance) / 150;
           particle.vx -= (dx / distance) * force * 0.02;
           particle.vy -= (dy / distance) * force * 0.02;
@@ -113,8 +151,9 @@ class ParticleBackground {
       }
 
       // Speed limit
-      const speed = Math.sqrt(particle.vx * particle.vx + particle.vy * particle.vy);
-      if (speed > 2) {
+      const speedSq = particle.vx * particle.vx + particle.vy * particle.vy;
+      if (speedSq > 4) {
+        const speed = Math.sqrt(speedSq);
         particle.vx = (particle.vx / speed) * 2;
         particle.vy = (particle.vy / speed) * 2;
       }
@@ -122,13 +161,15 @@ class ParticleBackground {
   }
 
   animate() {
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    
-    this.updateParticles();
-    this.drawConnections();
-    
-    for (let particle of this.particles) {
-      this.drawParticle(particle);
+    if (this.isVisible) {
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      
+      this.updateParticles();
+      this.drawConnections();
+      
+      for (let particle of this.particles) {
+        this.drawParticle(particle);
+      }
     }
 
     this.animationId = requestAnimationFrame(() => this.animate());
@@ -139,13 +180,18 @@ class ParticleBackground {
 const particles = new ParticleBackground('particles-canvas');
 
 // ============================================
-// PARALLAX SCROLL EFFECT
+// PARALLAX SCROLL EFFECT - THROTTLED
 // ============================================
 function initParallax() {
   const heroSection = document.querySelector('.bg-home-hack');
   const heroContent = document.querySelector('.bg-home-hack .container');
+  const floatElements = document.querySelectorAll('.float-elem');
+  const sections = document.querySelectorAll('.section, #about-us, #categories, #schedule, #jury, #contact, #faq');
   
-  window.addEventListener('scroll', () => {
+  let scrollTimeout;
+  let ticking = false;
+  
+  const updateParallax = () => {
     const scrolled = window.pageYOffset;
     const windowHeight = window.innerHeight;
     
@@ -159,14 +205,7 @@ function initParallax() {
       }
     }
 
-    // About section parallax layers - DISABLED (causes issues)
-    // const parallaxLayers = document.querySelectorAll('.parallax-layer');
-    // parallaxLayers.forEach(layer => {
-    //   // Parallax disabled for better readability
-    // });
-
-    // Floating elements parallax
-    const floatElements = document.querySelectorAll('.float-elem');
+    // Floating elements parallax - batch update
     floatElements.forEach(elem => {
       const speed = elem.dataset.speed || 1;
       const rect = elem.getBoundingClientRect();
@@ -176,8 +215,7 @@ function initParallax() {
       }
     });
 
-    // Section fade-in on scroll
-    const sections = document.querySelectorAll('.section, #about-us, #categories, #schedule, #jury, #contact, #faq');
+    // Section fade-in on scroll - batch update
     sections.forEach(section => {
       const rect = section.getBoundingClientRect();
       const sectionTop = rect.top;
@@ -188,7 +226,16 @@ function initParallax() {
         section.style.transform = 'translateY(0)';
       }
     });
-  });
+    
+    ticking = false;
+  };
+  
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
 }
 
 // ============================================
@@ -255,10 +302,17 @@ navLinks.forEach(l => {
   });
 });
 
-window.addEventListener("scroll", ev => {
-  ev.preventDefault();
-  windowScroll();
-});
+// Throttled scroll for navbar
+let navbarScrollTicking = false;
+window.addEventListener("scroll", () => {
+  if (!navbarScrollTicking) {
+    window.requestAnimationFrame(() => {
+      windowScroll();
+      navbarScrollTicking = false;
+    });
+    navbarScrollTicking = true;
+  }
+}, { passive: true });
 
 // ============================================
 // SMOOTH SCROLL
@@ -419,27 +473,35 @@ if (newsLetterBtn) {
 }
 
 // ============================================
-// GLOW EFFECT ON HOVER FOR CARDS
+// GLOW EFFECT ON HOVER FOR CARDS - THROTTLED
 // ============================================
 function initGlowEffects() {
   const cards = document.querySelectorAll('.slider-item-inner, .prize-elem-outer, .accordion-item, .stat-card');
   
   cards.forEach(card => {
+    let throttleTimeout;
+    
     card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-      
-      // Update glow position for stat cards
-      const glow = card.querySelector('.card-glow');
-      if (glow) {
-        glow.style.left = `${x - rect.width}px`;
-        glow.style.top = `${y - rect.height}px`;
+      if (!throttleTimeout) {
+        throttleTimeout = setTimeout(() => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+          
+          // Update glow position for stat cards
+          const glow = card.querySelector('.card-glow');
+          if (glow) {
+            glow.style.left = `${x - rect.width}px`;
+            glow.style.top = `${y - rect.height}px`;
+          }
+          
+          throttleTimeout = null;
+        }, 16); // ~60fps
       }
-    });
+    }, { passive: true });
   });
 }
 
