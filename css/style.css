@@ -1399,55 +1399,531 @@ textarea.form-control {
 }
 
 /* ============================================
-   REGISTER PANNEL - DARK MODE STYLING
+   REGISTER TO HACK - UNIFIED SECTION
    ============================================ */
-#register-pannel {
+#register-tracks-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #141414 0%, #0a0a0a 50%, #1a1a1a 100%);
   position: relative;
   overflow: hidden;
-  text-align: center;
+  color: var(--text-primary);
 }
 
-#register-pannel .container {
+#register-tracks-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 30% 20%, rgba(222, 5, 138, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(0, 245, 255, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#register-tracks-section .container {
   position: relative;
   z-index: 1;
 }
 
-#register-pannel p {
-  color: rgba(255, 255, 255, 0.9);
+/* Title */
+.register-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -1px;
+  text-shadow: 0 0 40px rgba(222, 5, 138, 0.4);
+}
+
+/* Intro Text */
+.register-intro p {
   font-size: 1.1rem;
   line-height: 1.8;
-  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.2rem;
 }
 
-#register-pannel b {
+.limited-spots {
   color: #ffffff;
-  font-weight: 600;
+  font-size: 1.15rem;
+  margin-top: 1.5rem;
 }
 
-/* Register button styling */
-#register-pannel .btn,
-#register-pannel button {
-  background-color: #ffffff !important;
-  color: #0a0e27 !important;
-  border: 2px solid #ffffff !important;
-  padding: 14px 32px;
+.limited-spots strong {
+  color: var(--neon-pink);
+  text-shadow: 0 0 10px var(--neon-pink-glow);
+}
+
+/* Tracks Grid - 3x2 layout */
+.tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  max-width: 100%;
+}
+
+/* Track Card */
+.track-card {
+  position: relative;
+  padding: 25px 15px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Wildcard special styling */
+.track-card[data-track="wildcard"] {
+  border-color: rgba(0, 245, 255, 0.3);
+}
+
+.track-card[data-track="wildcard"]::before {
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.1) 0%, rgba(222, 5, 138, 0.05) 100%);
+}
+
+.track-card[data-track="wildcard"].active {
+  border-color: rgba(0, 245, 255, 0.8);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(0, 245, 255, 0.5);
+}
+
+.track-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(222, 5, 138, 0.1) 0%, rgba(0, 245, 255, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.track-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: rgba(222, 5, 138, 0.6);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(222, 5, 138, 0.3);
+}
+
+.track-card:hover::before {
+  opacity: 1;
+}
+
+.track-card.active {
+  border-color: var(--neon-pink);
+  background: rgba(222, 5, 138, 0.1);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(222, 5, 138, 0.5);
+  transform: translateY(-5px);
+}
+
+.track-card.active::before {
+  opacity: 1;
+}
+
+.track-icon {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 12px;
+  filter: brightness(0.9);
+  transition: all 0.4s ease;
+}
+
+.track-card:hover .track-icon,
+.track-card.active .track-icon {
+  filter: brightness(1.1) drop-shadow(0 0 20px rgba(222, 5, 138, 0.5));
+  transform: scale(1.1);
+}
+
+.track-card h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  line-height: 1.3;
+  min-height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.track-card.active h4 {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(222, 5, 138, 0.6);
+}
+
+/* Track indicator */
+.track-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+}
+
+.track-card.active .track-indicator {
+  background: var(--neon-pink);
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 15px rgba(222, 5, 138, 0.8);
+}
+
+/* Track Detail Panel */
+.track-detail-panel {
+  min-height: 500px;
+  padding: 50px 40px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 100px;
+}
+
+.track-detail-content {
+  width: 100%;
+  position: relative;
+}
+
+.track-detail {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Placeholder */
+.detail-placeholder {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.placeholder-icon {
+  margin-bottom: 30px;
+  opacity: 0.6;
+  animation: float 3s ease-in-out infinite;
+}
+
+.detail-placeholder h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 15px;
+}
+
+.detail-placeholder p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Track Detail Content */
+.detail-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #de058a 0%, #00f5ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Wildcard title special gradient */
+#detail-wildcard .detail-title {
+  background: linear-gradient(135deg, #00f5ff 0%, #de058a 50%, #ff4db2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+.detail-description {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 30px;
+}
+
+.detail-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.highlight-item {
+  padding: 12px 16px;
+  background: rgba(222, 5, 138, 0.08);
+  border: 1px solid rgba(222, 5, 138, 0.2);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+  background: rgba(222, 5, 138, 0.15);
+  border-color: rgba(222, 5, 138, 0.4);
+  transform: translateX(5px);
+}
+
+/* Track Buttons */
+.track-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-track-primary {
+  flex: 1;
+  min-width: 150px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #de058a 0%, #ff4db2 100%);
+  color: #ffffff !important;
+  border: 2px solid #de058a;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 30px rgba(222, 5, 138, 0.3);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-track-primary:hover {
+  background: linear-gradient(135deg, #ff4db2 0%, #de058a 100%);
+  box-shadow: 0 0 50px rgba(222, 5, 138, 0.6);
+  transform: translateY(-3px);
+}
+
+.btn-track-secondary {
+  flex: 1;
+  min-width: 150px;
+  padding: 16px 32px;
+  background: transparent;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-track-secondary:hover {
+  border-color: var(--neon-pink);
+  background: rgba(222, 5, 138, 0.1);
+  color: var(--neon-pink) !important;
+  box-shadow: 0 0 30px rgba(222, 5, 138, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Tools Section */
+.tools-section {
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(222, 5, 138, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+}
+
+.tools-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px 20px;
+}
+
+.tool-item {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tool-item:hover {
+  color: var(--neon-pink);
+  text-shadow: 0 0 10px var(--neon-pink-glow);
+}
+
+.tool-separator {
+  color: var(--neon-pink);
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+.btn-explore {
+  padding: 14px 40px;
+  background: transparent;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 8px;
-  transition: all 0.3s ease;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
 }
 
-#register-pannel .btn:hover,
-#register-pannel button:hover {
-  background-color: transparent !important;
-  color: #ffffff !important;
-  border-color: #ffffff !important;
+.btn-explore:hover {
+  border-color: var(--neon-pink);
+  background: rgba(222, 5, 138, 0.1);
+  color: var(--neon-pink) !important;
+  box-shadow: 0 0 30px rgba(222, 5, 138, 0.3);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
 }
+
+/* Track card pulse animation when hovering detail panel */
+.track-card.active {
+  animation: activePulse 2s ease-in-out infinite;
+}
+
+@keyframes activePulse {
+  0%, 100% {
+    box-shadow: 
+      0 10px 40px rgba(0, 0, 0, 0.5),
+      0 0 40px rgba(222, 5, 138, 0.5);
+  }
+  50% {
+    box-shadow: 
+      0 10px 40px rgba(0, 0, 0, 0.5),
+      0 0 50px rgba(222, 5, 138, 0.7);
+  }
+}
+
+/* Responsive - Register Tracks Section */
+@media (max-width: 991px) {
+  .register-title {
+    font-size: 2.5rem;
+  }
+
+  .tracks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 40px;
+  }
+
+  .track-detail-panel {
+    position: relative;
+    top: 0;
+    min-height: 400px;
+  }
+
+  .detail-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tool-separator {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .register-title {
+    font-size: 2rem;
+  }
+
+  .register-intro p {
+    font-size: 1rem;
+  }
+
+  .tracks-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .track-card {
+    padding: 25px 15px;
+  }
+
+  .track-card h4 {
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+  }
+
+  .track-detail-panel {
+    padding: 30px 25px;
+    min-height: 450px;
+  }
+
+  .detail-title {
+    font-size: 1.6rem;
+  }
+
+  .detail-description {
+    font-size: 1rem;
+  }
+
+  .track-buttons {
+    flex-direction: column;
+  }
+
+  .btn-track-primary,
+  .btn-track-secondary {
+    width: 100%;
+  }
+
+  .tools-section {
+    padding: 30px 20px;
+  }
+
+  .tools-title {
+    font-size: 1.5rem;
+  }
+}
+
 
 /* ============================================
    ABOUT SECTION - DARK MODE WITH GLASSMORPHISM
@@ -1865,32 +2341,7 @@ textarea.form-control {
 }
 
 
-#categories {
-  padding: 100px 0 100px 0;
-  background: linear-gradient(135deg, #141414 0%, #0a0a0a 50%, #1a1a1a 100%);
-  position: relative;
-  color: white;
-  overflow: hidden;
-}
-
-#categories::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(ellipse at 20% 50%, rgba(222, 5, 138, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 80%, rgba(0, 245, 255, 0.1) 0%, transparent 40%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-#categories .container {
-  position: relative;
-  z-index: 1;
-}
+/* Old categories section removed - now part of register-tracks-section */
 
 #schedule {
   padding: 50px 0 13em 0;
