@@ -725,7 +725,7 @@ hr {
   position: relative;
   z-index: 1;
   padding: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(20, 20, 20, 0.5) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(20, 20, 20, 0.4) 100%);
   padding-bottom: 0;
 }
 
@@ -1386,120 +1386,6 @@ textarea.form-control {
 }
 
 /* ============================================
-   SECTION TRANSITION - WAVE DIVIDER
-   ============================================ */
-.section-transition {
-  position: relative;
-  height: 120px;
-  background: linear-gradient(
-    180deg,
-    rgba(20, 20, 20, 0.3) 0%,
-    rgba(10, 10, 10, 0.7) 50%,
-    #0a0a0a 100%
-  );
-  margin-top: -2px;
-  z-index: 10;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-}
-
-/* Wave SVG Divider */
-.wave-divider {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  animation: waveFloat 8s ease-in-out infinite;
-  filter: 
-    drop-shadow(0 0 15px rgba(222, 5, 138, 0.6))
-    drop-shadow(0 0 30px rgba(0, 245, 255, 0.3))
-    drop-shadow(0 5px 20px rgba(0, 0, 0, 0.5));
-  opacity: 0.9;
-}
-
-@keyframes waveFloat {
-  0%, 100% {
-    transform: translateX(0) translateY(0);
-  }
-  25% {
-    transform: translateX(-2%) translateY(-5px);
-  }
-  50% {
-    transform: translateX(0) translateY(0);
-  }
-  75% {
-    transform: translateX(2%) translateY(-5px);
-  }
-}
-
-/* Animated glow underneath */
-.transition-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    ellipse at 30% 50%,
-    rgba(222, 5, 138, 0.2) 0%,
-    transparent 50%
-  ),
-  radial-gradient(
-    ellipse at 70% 50%,
-    rgba(0, 245, 255, 0.15) 0%,
-    transparent 50%
-  );
-  animation: glowPulse 4s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-
-@keyframes glowPulse {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Glowing line at the top */
-.section-transition::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(222, 5, 138, 0.6) 10%,
-    rgba(0, 245, 255, 0.4) 50%,
-    rgba(222, 5, 138, 0.6) 90%,
-    transparent 100%
-  );
-  box-shadow: 
-    0 0 10px rgba(222, 5, 138, 0.5),
-    0 0 20px rgba(222, 5, 138, 0.3),
-    0 0 30px rgba(0, 245, 255, 0.2);
-  animation: shimmerLine 3s ease-in-out infinite;
-  z-index: 3;
-}
-
-@keyframes shimmerLine {
-  0%, 100% {
-    opacity: 0.6;
-    transform: scaleX(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scaleX(0.98);
-  }
-}
-
-/* ============================================
    SECTION BACKGROUNDS - DARK THEME
    ============================================ */
 #about-us {
@@ -1508,7 +1394,7 @@ textarea.form-control {
   position: relative;
   overflow: hidden;
   color: var(--text-primary);
-  margin-top: -10px;
+  margin-top: 0;
   z-index: 1;
 }
 
@@ -2865,14 +2751,6 @@ img {
   .about-tagline {
     font-size: 1.8rem;
   }
-
-  .section-transition {
-    height: 80px;
-  }
-
-  .wave-divider {
-    height: 80px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -2889,14 +2767,6 @@ img {
   .btn-hero-secondary {
     padding: 12px 24px;
     font-size: 0.9rem;
-  }
-
-  .section-transition {
-    height: 60px;
-  }
-
-  .wave-divider {
-    height: 60px;
   }
 }
 
