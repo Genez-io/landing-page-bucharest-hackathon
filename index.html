@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="css/tiny-slider.css" />
 
     <!-- Custom Css -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css?v=20231219" />
   </head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X1XKC9N10S"></script>
@@ -207,48 +207,116 @@
       >
     </div>
 
-    <!-- START ABOUT -->
+    <!-- START ABOUT - WHERE AI MEETS WEB3 -->
     <section class="section px-5" id="about-us">
+      <!-- Animated particles background -->
+      <div class="about-particles"></div>
+      
+      <!-- AI & Blockchain floating elements -->
+      <div class="floating-elements">
+        <div class="float-elem blockchain-icon" data-speed="2">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#de058a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="#de058a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="#de058a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="float-elem ai-icon" data-speed="3">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="3" stroke="#00f5ff" stroke-width="2"/>
+            <path d="M12 2V6M12 18V22M22 12H18M6 12H2M19.07 4.93L16.24 7.76M7.76 16.24L4.93 19.07M19.07 19.07L16.24 16.24M7.76 7.76L4.93 4.93" stroke="#00f5ff" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="float-elem code-icon" data-speed="1.5">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 18L22 12L16 6M8 6L2 12L8 18" stroke="#de058a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-12 mb-4">
-            <div class="text-center">
-              <img loading="lazy" src="images/about-draw.png" class="img-fluid about-icon" alt="" />
+        <div class="row align-items-center">
+          <!-- Left side: Text -->
+          <div class="col-lg-6">
+            <div class="about-content">
+              <!-- Where AI meets Web3 badge -->
+              <div class="tech-badge mb-4">
+                <span class="badge-icon">✨</span>
+                <span>WHERE AI MEETS WEB3</span>
+                <span class="badge-icon">✨</span>
+              </div>
+
+              <h2 class="about-title-dark mb-4">
+                Envision the future and bring it to life through <span class="gradient-text">code</span> in one weekend
+              </h2>
+              
+              <div class="about-text-dark">
+                <p>
+                  Welcome to the third edition of <strong>The Bucharest Hackathon</strong>, a high-energy, weekend-long event where ambitious builders and innovators from Romania and across the region come together to shape the future of technology.
+                </p>
+                <p>
+                  In 2026, we're venturing beyond code into the frontier of intelligent, decentralized innovation, where <span class="highlight-cyan">AI</span>, <span class="highlight-pink">blockchain</span>, and next-generation dev tools converge to redefine how we build, connect, and create.
+                </p>
+                <p>
+                  Over an intense 24 hours, you'll have access to expert mentors, cutting-edge APIs, and our partners' technologies to power your ideas. Whether you want to build an autonomous AI agent, a decentralized data marketplace, or a creative on-chain experience, this is your chance to prototype the future with a like-minded community.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div class="col-lg-12">
-            <div class="text-center">
-              <h2 class="about-tagline">
-                Envision the future and bring it to life through code in a weekend
-              </h2>
+          <!-- Right side: Stats Grid with glassmorphic cards -->
+          <div class="col-lg-6">
+            <div class="stats-grid">
+              <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-number gradient-text">300+</div>
+                <div class="stat-label">EXPERIENCED<br/>HACKERS</div>
+                <div class="card-glow"></div>
+              </div>
+
+              <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-number gradient-text">+50.000€</div>
+                <div class="stat-label">IN PRIZES</div>
+                <div class="card-glow"></div>
+              </div>
+
+              <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-number gradient-text">6</div>
+                <div class="stat-label">INDUSTRY<br/>TRACKS</div>
+                <div class="card-glow"></div>
+              </div>
+
+              <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-number gradient-text">30+</div>
+                <div class="stat-label">MENTORS<br/>& JUDGES</div>
+                <div class="card-glow"></div>
+              </div>
+
+              <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="stat-number gradient-text">20+</div>
+                <div class="stat-label">PARTNERS<br/>& SPONSORS</div>
+                <div class="card-glow"></div>
+              </div>
+
+              <div class="stat-card glass-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="stat-number gradient-text">1</div>
+                <div class="stat-label">WEEKEND TO BUILD<br/>THE FUTURE</div>
+                <div class="card-glow"></div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-8 mx-auto mt-4">
-          <p class="text-center">
-            Welcome to the second edition of <b>The Bucharest Hackathon</b>, a dynamic weekend-long
-            event where like minded programmers from Romania and the region gather to work on
-            groundbreaking software projects and solve tomorrow's coding challenges using the
-            latest, most cutting-edge technologies available. <br /><br />
-
-            This year we're going all in on bridging the gap between the digital realm and the real
-            world via <b style="color: #de058a;">blockchain</b>, <b style="color: #de058a;">AI</b> and <b style="color: #de058a;">devtools</b>. We bring the resources, the
-            fuel, the mentors and support you need to learn new skills and build a unique product.
-            Have fun with friends, and make new ones, while experimenting with new-age technologies!
-            <br /><br />
-            And that's not all! You will also get the chance to meet and have a chat with our
-            partners, who are leading the push for new and inspiring technologies.
-            <br /><br />
-            Join us to build amazing projects! Your task is to imagine a
-            future iteration of our tech world and write history one line of code at a time. Are you
-            up to the challenge?
-          </p>
+        <!-- Bottom CTA -->
+        <div class="row mt-5">
+          <div class="col-12 text-center">
+            <a href="#register" class="btn-glow-primary">
+              Join the Movement
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
-    
     <!-- END ABOUT -->
 
     <div id="register"></div>
@@ -259,12 +327,9 @@
             <p>
               Whether you already know your way around blockchain, AI, devtools or you're just starting, grab a seat, the event is open to all tech enthusiasts!
             </p>
-          </p>
+            <p>
               The Bucharest Hackathon requires physical attendance and you will be able to participate in teams of 2 to 4 members. If you already have a team, you can enroll here or enroll on your own and we'll find worthy teammates for you. The registration is free, you have everything to gain and nothing to lose!
-Limited spots available. Hurry up!
-            </p>
-          </p>
-              <!--Register until: <b>10th of March</b>-->
+              Limited spots available. Hurry up!
             </p>
             <p>
               <b>Limited spots available. Hurry up and register! </b>
