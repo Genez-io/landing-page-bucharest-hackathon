@@ -1410,56 +1410,204 @@ textarea.form-control {
   box-shadow: 0 0 10px var(--neon-pink-glow);
 }
 
+/* Dark mode judges section with glassmorphism and particles */
+.judges-dark-section {
+  background: #141414 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated particle background */
+.judges-dark-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(222, 5, 138, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(138, 5, 222, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(222, 5, 138, 0.1) 0%, transparent 50%);
+  animation: particleFloat 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+    opacity: 0.7;
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+    opacity: 0.6;
+  }
+}
+
+.judges-dark-section .title {
+  color: white !important;
+  text-shadow: 0 0 20px rgba(222, 5, 138, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.judges-dark-section .container {
+  position: relative;
+  z-index: 1;
+}
+
 .slider-item {
   text-align: center;
   padding: 0;
   color: white;
   padding: 0.5em;
+  position: relative;
+  /* margin: 1em; */
 }
 
+/* Black card with gradient to pink at bottom */
 .slider-item-inner {
   background: var(--bg-glass);
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 40%, rgba(222, 5, 138, 0.35) 100%),
+    url(../images/judge-bg.webp);
+  background-position: top;
+  background-size: cover;
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-glass);
-  border-radius: 0 0 20px 20px;
+  border-radius: 24px;
   padding: 0.6em;
   padding-top: 5em !important;
   margin-top: -5em !important;
-  transition: all 0.4s ease;
-}
-
-.slider-item:hover .slider-item-inner {
-  border-color: var(--neon-pink);
-  box-shadow: var(--shadow-glow);
+  box-shadow: 0px 0px 9px 0px #0000002b;
+  overflow: hidden;
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slider-item-inner-mentors {
-  background: linear-gradient(180deg, transparent 0%, var(--neon-pink-soft) 100%);
+  background: var(--bg-glass);
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.85) 40%, rgba(222, 5, 138, 0.35) 100%),
+    url(../images/mentor-bg.webp);
+  background-position: top;
+  background-size: cover;
   color: white !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: 24px;
+  box-shadow: 0px 0px 9px 0px #0000002b;
+  overflow: hidden;
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slider-item:hover .slider-item-inner,
+.slider-item-inner:hover,
+.slider-item-inner-mentors:hover {
+  border-color: var(--neon-pink);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.8),
+    0 0 40px var(--neon-pink-glow);
+}
+
+/* LinkedIn icon alignment */
+.slider-item-inner a,
+.slider-item-inner-mentors a {
+  margin-top: 1.5em !important;
+  flex-shrink: 0 !important;
 }
 
 .slider-item-inner-mentors p {
   color: white !important;
+  font-weight: 400;
+  line-height: 1.3em;
+  font-size: 1.3em;
+}
+
+/* Mentor company name in pink */
+.slider-item-inner-mentors p[style*="font-size: 1em"] {
+  color: #de058a !important;
+  margin-top: 0 !important;
+  margin-bottom: 1.5em !important;
+  height: 2em !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .slider-item-human-photo {
   border-radius: 50%;
-  width: 60%;
+  width: 55%;
   border: 3px solid var(--neon-pink);
   box-shadow: 0 0 20px var(--neon-pink-glow);
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 2;
+  filter: brightness(1.05);
+  margin: 0 auto 1.5em auto;
+  display: block;
+  flex-shrink: 0;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
-.slider-item:hover .slider-item-human-photo {
-  box-shadow: 0 0 40px var(--neon-pink-glow);
+.slider-item:hover .slider-item-human-photo,
+.slider-item-inner:hover .slider-item-human-photo,
+.slider-item-inner-mentors:hover .slider-item-human-photo {
   transform: scale(1.05);
+  filter: brightness(1.1);
+  box-shadow: 0 0 40px var(--neon-pink-glow);
 }
 
 .slider-item p {
   font-weight: 400;
   line-height: 1.3em;
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
   font-size: 1.3em;
+  margin-bottom: 0.5em !important;
+}
+
+/* Name paragraph - fixed height for alignment */
+.slider-item-inner p.mb-0,
+.slider-item-inner-mentors p.mb-0 {
+  height: 3.5em !important;
+  margin-bottom: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  line-height: 1.2em !important;
+}
+
+/* Company name in pink - extra spacing below */
+.slider-item-inner p[style*="font-size: 1em"] {
+  color: #de058a !important;
+  margin-top: 0 !important;
+  margin-bottom: 1.5em !important;
+  height: 2em !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .slider-container {
@@ -1501,6 +1649,21 @@ img {
 .controls li:hover {
   cursor: pointer;
   text-shadow: 0 0 20px var(--neon-pink-glow);
+  transform: scale(1.1);
+}
+
+/* Dark mode controls for judges section with glow */
+.judges-dark-section .controls {
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 10px rgba(222, 5, 138, 0.3);
+  transition: all 0.3s ease;
+}
+
+.judges-dark-section .controls li:hover {
+  color: #de058a;
+  text-shadow: 
+    0 0 20px rgba(222, 5, 138, 0.8),
+    0 0 40px rgba(222, 5, 138, 0.5);
   transform: scale(1.1);
 }
 
@@ -1563,6 +1726,15 @@ img {
 .prize-elem-outer {
   padding: 2em;
   padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prize-elem-img {
+  max-width: 45% !important;
+  height: auto !important;
+  object-fit: contain !important;
 }
 
 .prize-elem-img {
@@ -1580,6 +1752,20 @@ img {
   font-size: 11em;
   font-weight: bold;
   text-shadow: 0 0 40px var(--neon-pink-glow);
+}
+
+/* Prizes section title styling */
+#prizes .title {
+  font-size: 3em !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  color: white !important;
+  text-shadow: +3px 0px 0px #de058a !important;
+}
+
+#prizes .title span {
+  color: white !important;
 }
 
 /* ============================================
