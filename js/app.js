@@ -574,6 +574,42 @@ function initAOSAnimations() {
 }
 
 // ============================================
+// TRACK SELECTION INTERACTION
+// ============================================
+function initTrackSelection() {
+  const trackCards = document.querySelectorAll('.track-card');
+  const trackDetails = document.querySelectorAll('.track-detail');
+  
+  trackCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const trackId = card.dataset.track;
+      
+      // Remove active class from all cards
+      trackCards.forEach(c => c.classList.remove('active'));
+      
+      // Add active class to clicked card
+      card.classList.add('active');
+      
+      // Hide all detail panels
+      trackDetails.forEach(detail => {
+        detail.style.display = 'none';
+      });
+      
+      // Show selected detail panel
+      const selectedDetail = document.getElementById(`detail-${trackId}`);
+      if (selectedDetail) {
+        selectedDetail.style.display = 'block';
+      }
+    });
+  });
+  
+  // Set first track as active by default
+  if (trackCards.length > 0) {
+    trackCards[0].click();
+  }
+}
+
+// ============================================
 // INITIALIZATION
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -583,6 +619,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStatCardAnimations();
   initFloatingElements();
   initAOSAnimations();
+  initTrackSelection();
   
   // Add initial styles for animated sections
   const sections = document.querySelectorAll('#about-us, #categories, #schedule, #jury, #contact, #faq');
