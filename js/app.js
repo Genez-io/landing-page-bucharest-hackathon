@@ -159,6 +159,23 @@ function initParallax() {
       }
     }
 
+    // About section parallax layers - DISABLED (causes issues)
+    // const parallaxLayers = document.querySelectorAll('.parallax-layer');
+    // parallaxLayers.forEach(layer => {
+    //   // Parallax disabled for better readability
+    // });
+
+    // Floating elements parallax
+    const floatElements = document.querySelectorAll('.float-elem');
+    floatElements.forEach(elem => {
+      const speed = elem.dataset.speed || 1;
+      const rect = elem.getBoundingClientRect();
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        const yPos = scrolled * speed * 0.05;
+        elem.style.transform = `translateY(${yPos}px)`;
+      }
+    });
+
     // Section fade-in on scroll
     const sections = document.querySelectorAll('.section, #about-us, #categories, #schedule, #jury, #contact, #faq');
     sections.forEach(section => {
@@ -405,7 +422,7 @@ if (newsLetterBtn) {
 // GLOW EFFECT ON HOVER FOR CARDS
 // ============================================
 function initGlowEffects() {
-  const cards = document.querySelectorAll('.slider-item-inner, .prize-elem-outer, .accordion-item');
+  const cards = document.querySelectorAll('.slider-item-inner, .prize-elem-outer, .accordion-item, .stat-card');
   
   cards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -415,7 +432,144 @@ function initGlowEffects() {
       
       card.style.setProperty('--mouse-x', `${x}px`);
       card.style.setProperty('--mouse-y', `${y}px`);
+      
+      // Update glow position for stat cards
+      const glow = card.querySelector('.card-glow');
+      if (glow) {
+        glow.style.left = `${x - rect.width}px`;
+        glow.style.top = `${y - rect.height}px`;
+      }
     });
+  });
+}
+
+// ============================================
+// STAT CARD ANIMATIONS - ABOUT SECTION
+// ============================================
+function initStatCardAnimations() {
+  const statCards = document.querySelectorAll('.stat-card');
+  
+  const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '0px'
+  };
+
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Staggered fade-in animation
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0) scale(1)';
+          
+          // Animate the numbers
+          const statNumber = entry.target.querySelector('.stat-number');
+          if (statNumber && !statNumber.classList.contains('animated')) {
+            animateNumber(statNumber);
+            statNumber.classList.add('animated');
+          }
+        }, index * 100);
+        
+        statObserver.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  statCards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px) scale(0.9)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+    statObserver.observe(card);
+  });
+}
+
+// Animate numbers in stat cards
+function animateNumber(element) {
+  const text = element.textContent;
+  const hasPlus = text.includes('+');
+  const hasDollar = text.includes('$');
+  const hasK = text.includes('K');
+  
+  // Extract just the number
+  const numberMatch = text.match(/[\d.]+/);
+  if (!numberMatch) return;
+  
+  const finalNumber = parseFloat(numberMatch[0]);
+  const duration = 1500;
+  const steps = 60;
+  const increment = finalNumber / steps;
+  let current = 0;
+  let step = 0;
+  
+  const timer = setInterval(() => {
+    current += increment;
+    step++;
+    
+    let displayValue = Math.min(current, finalNumber).toFixed(finalNumber < 10 ? 0 : 0);
+    let displayText = displayValue;
+    
+    if (hasDollar) displayText = '$' + displayText;
+    if (hasK) displayText = displayText + 'K';
+    if (hasPlus) displayText = displayText + '+';
+    
+    element.textContent = displayText;
+    
+    if (step >= steps) {
+      clearInterval(timer);
+      // Set final value
+      let finalText = finalNumber.toString();
+      if (hasDollar) finalText = '$' + finalText;
+      if (hasK) finalText = finalText + 'K';
+      if (hasPlus) finalText = finalText + '+';
+      element.textContent = finalText;
+    }
+  }, duration / steps);
+}
+
+// ============================================
+// FLOATING ELEMENTS INTERACTION
+// ============================================
+function initFloatingElements() {
+  const floatingElements = document.querySelectorAll('.float-elem');
+  
+  floatingElements.forEach(elem => {
+    elem.addEventListener('mouseenter', () => {
+      elem.style.animationPlayState = 'paused';
+      elem.style.transform = 'scale(1.2) rotate(10deg)';
+    });
+    
+    elem.addEventListener('mouseleave', () => {
+      elem.style.animationPlayState = 'running';
+      elem.style.transform = '';
+    });
+  });
+}
+
+// ============================================
+// AOS-STYLE SCROLL ANIMATIONS
+// ============================================
+function initAOSAnimations() {
+  const aosElements = document.querySelectorAll('[data-aos]');
+  
+  const aosOptions = {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const aosObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.aosDelay || 0;
+        setTimeout(() => {
+          entry.target.classList.add('aos-animate');
+        }, delay);
+        aosObserver.unobserve(entry.target);
+      }
+    });
+  }, aosOptions);
+
+  aosElements.forEach(elem => {
+    aosObserver.observe(elem);
   });
 }
 
@@ -426,12 +580,27 @@ document.addEventListener('DOMContentLoaded', () => {
   initParallax();
   initRevealAnimations();
   initGlowEffects();
+  initStatCardAnimations();
+  initFloatingElements();
+  initAOSAnimations();
   
   // Add initial styles for animated sections
   const sections = document.querySelectorAll('#about-us, #categories, #schedule, #jury, #contact, #faq');
   sections.forEach(section => {
     section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
   });
+  
+  // Smooth scroll behavior for CTA button
+  const ctaButton = document.querySelector('.btn-glow-primary');
+  if (ctaButton) {
+    ctaButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(ctaButton.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
 });
 
 // ============================================
