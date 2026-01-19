@@ -195,15 +195,8 @@ function initParallax() {
     const scrolled = window.pageYOffset;
     const windowHeight = window.innerHeight;
     
-    // Hero parallax effect
-    if (heroSection && heroContent) {
-      const heroRect = heroSection.getBoundingClientRect();
-      if (heroRect.top < windowHeight && heroRect.bottom > 0) {
-        const parallaxValue = scrolled * 0.4;
-        heroContent.style.transform = `translateY(${parallaxValue}px)`;
-        heroContent.style.opacity = 1 - (scrolled / windowHeight) * 0.5;
-      }
-    }
+    // Hero parallax effect - disabled
+    // Hero content now stays fixed in place when scrolling
 
     // Floating elements parallax - batch update
     floatElements.forEach(elem => {
