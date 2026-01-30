@@ -136,6 +136,7 @@ p {
   padding-bottom: 100px;
   padding-top: 100px;
   position: relative;
+  background: transparent;
 }
 
 .section-lg {
@@ -1282,7 +1283,7 @@ textarea.form-control {
 .bg-footer {
   border-top: 1px solid var(--border-glass);
   padding: 60px 0px 50px 0px;
-  background-color: #0a0a0a;
+  background-color: transparent;
 }
 
 /* Left Column */
@@ -1308,14 +1309,25 @@ textarea.form-control {
 .footer-social {
   display: flex;
   justify-content: flex-start;
-  gap: 15px;
+  align-items: center;
+  gap: 0;
   margin-top: 1rem;
 }
 
 .footer-social-icon {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   transition: color 0.3s ease, transform 0.3s ease;
+  padding: 0 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-social-icon:first-child {
+  padding-left: 0;
+}
+
+.footer-social-icon:last-child {
+  border-right: none;
 }
 
 .footer-social-icon:hover {
@@ -1477,7 +1489,7 @@ textarea.form-control {
    ============================================ */
 #about-us {
   padding: 100px 0 120px 0;
-  background: linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #1a1a1a 100%);
+  background: transparent;
   position: relative;
   overflow: hidden;
   color: var(--text-primary);
@@ -1490,25 +1502,13 @@ textarea.form-control {
    ============================================ */
 #register-tracks-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, #141414 0%, #0a0a0a 50%, #1a1a1a 100%);
+  background: transparent;
   position: relative;
   overflow: hidden;
   color: var(--text-primary);
 }
 
-#register-tracks-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(ellipse at 30% 20%, rgba(222, 5, 138, 0.12) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 80%, rgba(0, 245, 255, 0.08) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
+/* Removed register-tracks gradient overlay - using particle canvas */
 
 #register-tracks-section .container {
   position: relative;
@@ -2018,19 +2018,9 @@ textarea.form-control {
    ============================================ */
 
 /* Animated particle background - OPTIMIZED */
+/* Removed about-particles - using particle canvas instead */
 .about-particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(222, 5, 138, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(222, 5, 138, 0.05) 0%, transparent 70%);
-  animation: particleMove 20s ease-in-out infinite;
-  z-index: 0;
-  will-change: auto; /* Don't hint for continuous animation */
+  display: none;
 }
 
 /* Simplified animation for better performance */
@@ -2045,8 +2035,9 @@ textarea.form-control {
   }
 }
 
-/* Floating AI & Blockchain elements */
+/* Floating AI & Blockchain elements - hidden, using particle canvas */
 .floating-elements {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -2416,23 +2407,13 @@ textarea.form-control {
 
 #schedule {
   padding: 50px 0 4em 0;
-  background: linear-gradient(135deg, #1a1a1a 0%, #141414 100%);
+  background: transparent;
   color: white;
   position: relative;
   overflow: hidden;
 }
 
-#schedule::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 30% 40%, rgba(222, 5, 138, 0.1) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
+/* Removed schedule gradient overlay - using particle canvas */
 
 #schedule .container {
   position: relative;
@@ -2441,23 +2422,13 @@ textarea.form-control {
 
 #jury {
   padding: 100px 0 100px 0;
-  background: linear-gradient(135deg, #0a0a0a 0%, #141414 100%);
+  background: transparent;
   color: white;
   position: relative;
   overflow: hidden;
 }
 
-#jury::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(ellipse at center, rgba(222, 5, 138, 0.12) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
+/* Removed jury gradient overlay - using particle canvas */
 
 #jury .container {
   position: relative;
@@ -2466,23 +2437,13 @@ textarea.form-control {
 
 #contact {
   padding: 50px 0 50px 0;
-  background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%);
+  background: transparent;
   color: white;
   position: relative;
   overflow: hidden;
 }
 
-#contact::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(ellipse at 30% 50%, rgba(0, 245, 255, 0.08) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
+/* Removed contact gradient overlay - using particle canvas */
 
 #contact .container {
   position: relative;
@@ -2491,23 +2452,13 @@ textarea.form-control {
 
 #faq {
   padding: 100px 0 100px 0;
-  background: linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #1a1a1a 100%);
+  background: transparent;
   color: white;
   position: relative;
   overflow: hidden;
 }
 
-#faq::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(ellipse at 70% 30%, rgba(222, 5, 138, 0.1) 0%, transparent 60%);
-  pointer-events: none;
-  z-index: 0;
-}
+/* Removed faq gradient overlay - using particle canvas */
 
 #faq .container {
   position: relative;
@@ -2855,27 +2806,13 @@ textarea.form-control {
 
 /* Dark mode judges section with glassmorphism and particles */
 .judges-dark-section {
-  background: #141414 !important;
+  background: transparent !important;
   position: relative;
   overflow: hidden;
 }
 
 /* Animated particle background */
-.judges-dark-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(222, 5, 138, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(138, 5, 222, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(222, 5, 138, 0.1) 0%, transparent 50%);
-  animation: particleFloat 20s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 0;
-}
+/* Removed judges-dark-section::before - using particle canvas instead */
 
 @keyframes particleFloat {
   0%, 100% {
@@ -3123,6 +3060,12 @@ img {
    ============================================ */
 
 /* Left side - Text content */
+/* Prizes section */
+#prizes {
+  background: transparent;
+  padding: 80px 0;
+}
+
 .prizes-content {
   padding-right: 20px;
 }
@@ -3175,11 +3118,12 @@ img {
 .prize-card:hover {
   transform: translateY(-10px) scale(1.02);
   border-color: rgba(222, 5, 138, 0.5);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(30, 30, 30, 0.9);
 }
 
 .prize-card-main {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .prize-card-img {
@@ -3211,7 +3155,8 @@ img {
 }
 
 .prize-card-secondary {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .prize-card-secondary .prize-card-img {
@@ -3517,42 +3462,54 @@ img {
 /* ============================================
    SPONSORS SECTION
    ============================================ */
+#sponsors-section {
+  background: transparent !important;
+  position: relative;
+}
+
 #sponsors {
   background: transparent;
   position: relative;
 }
 
-#sponsors::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle at center, 
-    rgba(222, 5, 138, 0.4) 0%, 
-    rgba(222, 5, 138, 0.35) 10%, 
-    rgba(222, 5, 138, 0.28) 20%, 
-    rgba(222, 5, 138, 0.2) 30%, 
-    rgba(222, 5, 138, 0.14) 40%, 
-    rgba(222, 5, 138, 0.09) 50%, 
-    rgba(222, 5, 138, 0.05) 60%, 
-    rgba(222, 5, 138, 0.02) 70%, 
-    transparent 80%
-  );
-  pointer-events: none;
-  z-index: 0;
+/* Sponsor card boxes */
+#sponsors .col-lg-2,
+#sponsors .col-md-4,
+#sponsors .col-6 {
+  padding: 5px;
+}
+
+#sponsors .col-lg-2 > div,
+#sponsors .col-md-4 > div,
+#sponsors .col-6 > div {
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  transition: all 0.3s ease;
+}
+
+#sponsors .col-lg-2 > div:hover,
+#sponsors .col-md-4 > div:hover,
+#sponsors .col-6 > div:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(30, 30, 30, 0.9);
 }
 
 #sponsors img {
-  transition: all 0.4s ease;
-  filter: brightness(1);
+  transition: all 0.3s ease;
+  filter: grayscale(100%) brightness(2) contrast(0.9);
+  opacity: 0.85;
 }
 
 #sponsors img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
+  transform: scale(1.15);
+  filter: grayscale(100%) brightness(2.2) contrast(1);
+  opacity: 1;
 }
 
 /* ============================================
@@ -4885,6 +4842,14 @@ img {
   #sponsors .row.mt-2.justify-content-center img {
     max-width: 80px !important;
     height: 40px !important;
+  }
+  
+  /* Sponsor cards on mobile */
+  #sponsors .col-lg-2 > div,
+  #sponsors .col-md-4 > div,
+  #sponsors .col-6 > div {
+    padding: 10px 15px !important;
+    min-height: 60px !important;
   }
   
   /* Main partners slightly larger */
