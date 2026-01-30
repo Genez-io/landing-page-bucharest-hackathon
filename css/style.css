@@ -1950,17 +1950,17 @@ textarea.form-control {
   }
 
   .tracks-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
   .track-card {
-    padding: 25px 15px;
+    padding: 15px 10px;
   }
 
   .track-card h4 {
-    font-size: 0.85rem;
-    letter-spacing: 0.3px;
+    font-size: 0.7rem;
+    letter-spacing: 0.2px;
   }
 
   .track-detail-panel {
@@ -2379,8 +2379,8 @@ textarea.form-control {
   }
 
   .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
   .stat-number {
@@ -3100,47 +3100,156 @@ img {
 /* ============================================
    PRIZES SECTION
    ============================================ */
-.prize-elem-outer {
-  padding: 2em;
-  padding-bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* ============================================
+   PRIZES SECTION - NEW LAYOUT
+   ============================================ */
+
+/* Left side - Text content */
+.prizes-content {
+  padding-right: 20px;
 }
 
-.prize-elem-img {
-  max-width: 45% !important;
-  height: auto !important;
-  object-fit: contain !important;
-  filter: brightness(0.7);
-  transition: all 0.4s ease;
-  border-radius: 20px;
-}
-
-.prize-elem-outer:hover .prize-elem-img {
-  transform: translateY(-10px);
-  filter: drop-shadow(0 20px 40px var(--neon-pink-glow));
-}
-
-.prize-elem-count {
-  color: var(--neon-pink) !important;
-  font-size: 11em;
-  font-weight: bold;
-  text-shadow: 0 0 40px var(--neon-pink-glow);
-}
-
-/* Prizes section title styling */
-#prizes .title {
+.prizes-title {
   font-size: 3em !important;
   font-weight: 600 !important;
   letter-spacing: 0.05em !important;
   text-transform: uppercase !important;
   color: white !important;
   text-shadow: +3px 0px 0px #de058a !important;
+  text-align: left;
 }
 
-#prizes .title span {
-  color: white !important;
+.prizes-text-box {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.prizes-description {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.prizes-description .gradient-text {
+  font-size: 1.3rem;
+}
+
+/* Right side - Prizes grid */
+.prizes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Main prize card (1st place) */
+.prize-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s ease;
+}
+
+.prize-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(222, 5, 138, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.prize-card-main {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.prize-card-img {
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0.9);
+  transition: all 0.4s ease;
+  border-radius: 15px;
+}
+
+.prize-card:hover .prize-card-img {
+  filter: drop-shadow(0 15px 30px var(--neon-pink-glow)) brightness(1);
+}
+
+.prize-card-bonus {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+/* Secondary prizes row (2nd and 3rd place) */
+.prizes-row-secondary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.prize-card-secondary {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.prize-card-secondary .prize-card-img {
+  max-width: 150px;
+}
+
+.prize-card-secondary .prize-card-bonus {
+  font-size: 0.9rem;
+}
+
+/* Responsive design for Prizes section */
+@media (max-width: 991px) {
+  .prizes-content {
+    padding-right: 0;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .prizes-title {
+    text-align: center;
+  }
+
+  .prizes-grid {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .prizes-title {
+    font-size: 2rem !important;
+  }
+
+  .prizes-text-box {
+    padding: 20px;
+  }
+
+  .prizes-description {
+    font-size: 1rem;
+  }
+
+  .prizes-row-secondary {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .prize-card {
+    padding: 20px;
+  }
+
+  .prize-card-img {
+    max-width: 150px;
+  }
+
+  .prize-card-secondary .prize-card-img {
+    max-width: 120px;
+  }
 }
 
 /* ============================================
@@ -4426,5 +4535,430 @@ img {
   .track-case-links {
     flex-direction: column;
     gap: 0.75rem;
+  }
+}
+
+/* ============================================
+   MOBILE COMPACT STYLES - REDUCED SCROLLING
+   ============================================ */
+@media (max-width: 768px) {
+  /* Tighter section padding */
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  /* Compact register/tracks section */
+  #register-tracks-section {
+    padding: 50px 0 !important;
+  }
+  
+  .register-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .register-subtitle {
+    font-size: 0.85rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .track-detail-panel {
+    min-height: auto !important;
+    padding: 25px 20px !important;
+  }
+  
+  .detail-title {
+    font-size: 1.3rem !important;
+  }
+  
+  .detail-description {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  .detail-highlights {
+    gap: 8px !important;
+  }
+  
+  .highlight-item {
+    font-size: 0.8rem !important;
+    padding: 6px 12px !important;
+  }
+  
+  .track-buttons {
+    gap: 10px !important;
+    margin-top: 15px !important;
+  }
+  
+  .btn-track-primary,
+  .btn-track-secondary {
+    padding: 10px 20px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .section-sm {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  /* Smaller titles */
+  .title {
+    font-size: 1.5rem !important;
+  }
+  
+  .about-title-dark {
+    font-size: 1.5rem !important;
+  }
+  
+  .about-subtitle-dark {
+    font-size: 0.85rem !important;
+  }
+  
+  .about-tagline {
+    font-size: 1.4rem !important;
+  }
+  
+  /* Stat cards - 2 columns side by side */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    padding: 10px !important;
+  }
+  
+  .stat-card {
+    padding: 12px 8px !important;
+  }
+  
+  .stat-number {
+    font-size: 1.3rem !important;
+  }
+  
+  .stat-label {
+    font-size: 0.6rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Track cards - 2 columns side by side */
+  .tracks-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+  
+  .track-card {
+    padding: 10px 6px !important;
+  }
+  
+  .track-card h4 {
+    font-size: 0.6rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .track-icon {
+    width: 28px !important;
+    height: 28px !important;
+    margin-bottom: 6px !important;
+  }
+  
+  /* Compact judges/mentors cards - whole card smaller */
+  .slider-item {
+    padding: 3px !important;
+  }
+  
+  .slider-item-inner {
+    padding: 10px 8px !important;
+    min-height: auto !important;
+  }
+  
+  .slider-item-human-photo {
+    width: 55px !important;
+    height: 55px !important;
+    margin-bottom: 6px !important;
+  }
+  
+  .slider-item h5 {
+    font-size: 0.75rem !important;
+    margin-top: 4px !important;
+    margin-bottom: 2px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .slider-item p {
+    font-size: 0.65rem !important;
+    margin-bottom: 2px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .slider-item a img {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  
+  /* Ensure items fit nicely */
+  .tns-item {
+    padding: 0 3px !important;
+  }
+  
+  /* Prizes - compact mobile styles */
+  .prizes-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .prizes-text-box {
+    padding: 15px !important;
+  }
+  
+  .prize-card {
+    padding: 15px !important;
+  }
+  
+  .prize-card-img {
+    max-width: 100px !important;
+  }
+  
+  .prize-card-bonus {
+    font-size: 0.75rem !important;
+  }
+  
+  /* Judges/Mentors slider - compact cards */
+  .slider-jury,
+  .slider-mentors {
+    padding: 0 5px;
+  }
+  
+  .tns-outer {
+    padding: 0 !important;
+  }
+  
+  .tns-nav {
+    margin-top: 10px !important;
+  }
+  
+  .tns-nav button {
+    width: 8px !important;
+    height: 8px !important;
+    margin: 0 3px !important;
+  }
+  
+  /* Compact info section */
+  #info {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  #info .info-title {
+    font-size: 1.2rem !important;
+  }
+  
+  #info .info-intro {
+    font-size: 0.85rem !important;
+    margin-bottom: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  
+  #info .info-sections {
+    gap: 0.75rem !important;
+  }
+  
+  #info .info-block h4 {
+    font-size: 0.7rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+  
+  #info .info-block ul li {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  #info .info-cta-row {
+    margin-top: 1rem !important;
+    padding-top: 1rem !important;
+  }
+  
+  /* Compact FAQ */
+  #faq {
+    padding: 50px 0 !important;
+  }
+  
+  .accordion-item {
+    margin-bottom: 8px !important;
+  }
+  
+  .accordion-button {
+    padding: 12px 15px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .accordion-body {
+    padding: 12px 15px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  /* Compact footer */
+  .bg-footer {
+    padding: 30px 0 20px !important;
+  }
+  
+  .footer-logo img {
+    height: 35px !important;
+  }
+  
+  .footer-tagline {
+    font-size: 0.8rem !important;
+  }
+  
+  .footer-email {
+    font-size: 0.75rem !important;
+  }
+  
+  /* Reduce margins between sections */
+  #sponsors {
+    margin-top: 2em !important;
+  }
+  
+  /* Compact schedule section */
+  #schedule {
+    padding: 30px 0 2em 0 !important;
+  }
+  
+  /* Compact jury section */
+  #jury {
+    padding: 50px 0 !important;
+  }
+}
+
+/* ============================================
+   SPONSORS HORIZONTAL CAROUSEL - MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+  #sponsors {
+    padding: 1rem 0 !important;
+  }
+  
+  #sponsors .title {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Horizontal scroll container for sponsor rows */
+  #sponsors .row.mt-2.justify-content-center {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 10px 0;
+    gap: 15px;
+    justify-content: flex-start !important;
+  }
+  
+  #sponsors .row.mt-2.justify-content-center::-webkit-scrollbar {
+    display: none;
+  }
+  
+  #sponsors .row.mt-2.justify-content-center > div {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+  
+  #sponsors .row.mt-2.justify-content-center img {
+    max-width: 80px !important;
+    height: 40px !important;
+  }
+  
+  /* Main partners slightly larger */
+  #sponsors .row.justify-content-center.mb-4 .row.mt-2 img {
+    max-width: 100px !important;
+    height: 50px !important;
+  }
+  
+  /* Orange section compact */
+  #sponsors .row.justify-content-center.mt-4.mb-2 {
+    margin-top: 1rem !important;
+  }
+  
+  #sponsors .row.justify-content-center.mt-4.mb-2 .title {
+    font-size: 1rem !important;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .title {
+    font-size: 1.3rem !important;
+  }
+  
+  /* Keep stat cards 2 columns */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+  
+  .stat-card {
+    padding: 10px 6px !important;
+  }
+  
+  .stat-number {
+    font-size: 1.1rem !important;
+  }
+  
+  .stat-label {
+    font-size: 0.55rem !important;
+  }
+  
+  /* Keep track cards 2 columns */
+  .tracks-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
+  }
+  
+  .track-card {
+    padding: 8px 5px !important;
+  }
+  
+  .track-card h4 {
+    font-size: 0.5rem !important;
+  }
+  
+  .track-icon {
+    width: 24px !important;
+    height: 24px !important;
+    margin-bottom: 4px !important;
+  }
+  
+  .slider-item-human-photo {
+    width: 65px !important;
+    height: 65px !important;
+  }
+  
+  #info .info-title {
+    font-size: 1.1rem !important;
+  }
+  
+  #sponsors .row.mt-2.justify-content-center img {
+    max-width: 70px !important;
+    height: 35px !important;
+  }
+  
+  /* Even smaller judges/mentors cards on extra small */
+  .slider-item-human-photo {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  
+  .slider-item h5 {
+    font-size: 0.7rem !important;
+  }
+  
+  .slider-item p {
+    font-size: 0.6rem !important;
   }
 }

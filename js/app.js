@@ -310,19 +310,23 @@ window.addEventListener("scroll", () => {
 // ============================================
 // SMOOTH SCROLL
 // ============================================
-var scroll = new SmoothScroll("#navbar-navlist a", {
-  speed: 50,
-  offset: 60
-});
+if (typeof SmoothScroll !== 'undefined') {
+  var scroll = new SmoothScroll("#navbar-navlist a", {
+    speed: 50,
+    offset: 60
+  });
+}
 
 // ============================================
 // NAVBAR ACTIVE CLASS (GUMSHOE)
 // ============================================
-var spy = new Gumshoe("#navbar-navlist a", {
-  navClass: "active",
-  contentClass: "active",
-  offset: 70
-});
+if (typeof Gumshoe !== 'undefined') {
+  var spy = new Gumshoe("#navbar-navlist a", {
+    navClass: "active",
+    contentClass: "active",
+    offset: 70
+  });
+}
 
 // ============================================
 // FADE IN HELPER
@@ -343,54 +347,59 @@ function fadeIn() {
 // ============================================
 // TINY SLIDER - JUDGES
 // ============================================
-const sliderJudges = tns({
-  container: ".slider-jury",
-  loop: true,
-  items: 1,
-  slideBy: "page",
-  nav: true,
-  navPosition: "bottom",
-  autoplay: false,
-  speed: 400,
-  autoplayButtonOutput: false,
-  mouseDrag: true,
-  lazyload: true,
-  controlsContainer: "#customize-controls-jury",
-  responsive: {
-    640: {
-      items: 2
-    },
-    768: {
-      items: 4
+if (document.querySelector(".slider-jury")) {
+  const sliderJudges = tns({
+    container: ".slider-jury",
+    loop: true,
+    items: 1,
+    slideBy: "page",
+    nav: true,
+    navPosition: "bottom",
+    autoplay: false,
+    speed: 400,
+    autoplayButtonOutput: false,
+    mouseDrag: true,
+    lazyload: true,
+    controlsContainer: "#customize-controls-jury",
+    responsive: {
+      640: {
+        items: 2
+      },
+      768: {
+        items: 4
+      }
     }
-  }
-});
+  });
+}
 
 // ============================================
 // TINY SLIDER - MENTORS
 // ============================================
-const sliderMentors = tns({
-  container: ".slider-mentors",
-  loop: true,
-  items: 1,
-  slideBy: "page",
-  nav: true,
-  navPosition: "bottom",
-  autoplay: false,
-  speed: 400,
-  autoplayButtonOutput: false,
-  mouseDrag: true,
-  lazyload: true,
-  controlsContainer: "#customize-controls-mentors",
-  responsive: {
-    640: {
-      items: 2
-    },
-    768: {
-      items: 4
+if (document.querySelector(".slider-mentors")) {
+  const sliderMentors = tns({
+    container: ".slider-mentors",
+    loop: true,
+    items: 1,
+    slideBy: "page",
+    nav: true,
+    navPosition: "bottom",
+    autoplay: false,
+    speed: 400,
+    autoplayButtonOutput: false,
+    mouseDrag: true,
+    lazyload: true,
+    controlsContainer: "#customize-controls-mentors",
+    responsive: {
+      640: {
+        items: 2
+      },
+      768: {
+        items: 4
+      }
     }
-  }
-});
+  });
+}
+
 
 // ============================================
 // NEWSLETTER FUNCTIONALITY
