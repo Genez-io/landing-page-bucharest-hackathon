@@ -3680,8 +3680,11 @@ img {
   }
   
   .sponsors-main-grid {
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
     margin-bottom: 30px;
+    padding: 0 10px;
   }
   
   .sponsor-card {
@@ -3704,14 +3707,14 @@ img {
   }
   
   .sponsor-card-main {
-    width: 160px;
-    height: 85px;
-    margin: 0 10px;
+    width: 100%;
+    height: 75px;
+    margin: 0;
   }
   
   .sponsor-card-main img {
-    max-width: 120px;
-    max-height: 55px;
+    max-width: 100px;
+    max-height: 50px;
   }
   
   /* Smaller edge gradients on mobile */
@@ -4852,41 +4855,65 @@ img {
   
   /* Compact judges/mentors cards - whole card smaller */
   .slider-item {
-    padding: 3px !important;
+    padding: 5px !important;
+    max-width: 280px !important;
+    margin: 0 auto !important;
   }
   
-  .slider-item-inner {
-    padding: 10px 8px !important;
+  .slider-item-inner,
+  .slider-item-inner-mentors {
+    padding: 20px 15px !important;
+    padding-top: 20px !important;
+    margin-top: 0 !important;
     min-height: auto !important;
+    overflow: visible !important;
+    max-width: 260px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   
   .slider-item-human-photo {
-    width: 55px !important;
-    height: 55px !important;
-    margin-bottom: 6px !important;
+    width: 80px !important;
+    height: 80px !important;
+    margin-bottom: 12px !important;
+    margin-top: 10px !important;
   }
   
   .slider-item h5 {
-    font-size: 0.75rem !important;
-    margin-top: 4px !important;
-    margin-bottom: 2px !important;
-    line-height: 1.2 !important;
+    font-size: 1rem !important;
+    margin-top: 8px !important;
+    margin-bottom: 4px !important;
+    line-height: 1.3 !important;
   }
   
   .slider-item p {
-    font-size: 0.65rem !important;
-    margin-bottom: 2px !important;
-    line-height: 1.2 !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 6px !important;
+    line-height: 1.4 !important;
   }
   
   .slider-item a img {
-    width: 16px !important;
-    height: 16px !important;
+    width: 24px !important;
+    height: 24px !important;
+  }
+  
+  .slider-item a i {
+    font-size: 1.5em !important;
   }
   
   /* Ensure items fit nicely */
   .tns-item {
-    padding: 0 3px !important;
+    padding: 0 10px !important;
+  }
+  
+  /* Prevent section clipping */
+  .judges-dark-section {
+    overflow: visible !important;
+  }
+  
+  /* Controls positioning */
+  .slider-container {
+    padding: 0 2rem !important;
   }
   
   /* Prizes - compact mobile styles */
@@ -5069,8 +5096,8 @@ img {
   }
   
   .slider-item-human-photo {
-    width: 65px !important;
-    height: 65px !important;
+    width: 70px !important;
+    height: 70px !important;
   }
   
   #info .info-title {
@@ -5082,17 +5109,23 @@ img {
     height: 35px !important;
   }
   
-  /* Even smaller judges/mentors cards on extra small */
-  .slider-item-human-photo {
-    width: 45px !important;
-    height: 45px !important;
+  /* Keep cards readable on extra small */
+  .slider-item-inner,
+  .slider-item-inner-mentors {
+    padding: 15px 12px !important;
+    margin-top: 0 !important;
+    min-height: auto !important;
   }
   
   .slider-item h5 {
-    font-size: 0.7rem !important;
+    font-size: 0.9rem !important;
   }
   
   .slider-item p {
-    font-size: 0.6rem !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .slider-container {
+    padding: 0 1.5rem !important;
   }
 }
