@@ -3263,18 +3263,18 @@ img {
 
 #info .info-subtitle {
   color: var(--neon-pink);
-  font-size: 0.75rem;
+  font-size: 1rem;
   letter-spacing: 0.2em;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 #info .info-title {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   text-transform: uppercase;
   letter-spacing: -0.02em;
 }
@@ -3285,11 +3285,11 @@ img {
 
 #info .info-intro {
   color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
   border-bottom: 1px solid var(--border-glass);
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.75rem;
 }
 
 #info .info-sections {
@@ -3300,10 +3300,10 @@ img {
 
 #info .info-block h4 {
   color: var(--text-primary);
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 #info .info-block ul {
@@ -3314,9 +3314,9 @@ img {
 
 #info .info-block ul li {
   color: var(--text-secondary);
-  font-size: 0.875rem;
-  line-height: 1.7;
-  padding-left: 1rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  padding-left: 1.25rem;
   position: relative;
 }
 
@@ -3983,7 +3983,7 @@ img {
   }
   
   #info .info-title {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
   
   #info .info-cta-row {
@@ -4966,27 +4966,27 @@ img {
   }
   
   #info .info-title {
-    font-size: 1.2rem !important;
+    font-size: 1.5rem !important;
   }
   
   #info .info-intro {
-    font-size: 0.85rem !important;
-    margin-bottom: 1rem !important;
-    padding-bottom: 1rem !important;
+    font-size: 1rem !important;
+    margin-bottom: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
   }
   
   #info .info-sections {
-    gap: 0.75rem !important;
+    gap: 1rem !important;
   }
   
   #info .info-block h4 {
-    font-size: 0.7rem !important;
-    margin-bottom: 0.3rem !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 0.4rem !important;
   }
   
   #info .info-block ul li {
-    font-size: 0.8rem !important;
-    line-height: 1.5 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
   }
   
   #info .info-cta-row {
@@ -5103,7 +5103,15 @@ img {
   }
   
   #info .info-title {
-    font-size: 1.1rem !important;
+    font-size: 1.3rem !important;
+  }
+  
+  #info .info-block h4 {
+    font-size: 0.9rem !important;
+  }
+  
+  #info .info-block ul li {
+    font-size: 0.9rem !important;
   }
   
   #sponsors .row.mt-2.justify-content-center img {
