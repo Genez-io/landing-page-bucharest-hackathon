@@ -4856,8 +4856,7 @@ img {
   /* Compact judges/mentors cards - whole card smaller */
   .slider-item {
     padding: 5px !important;
-    max-width: 280px !important;
-    margin: 0 auto !important;
+    text-align: center !important;
   }
   
   .slider-item-inner,
@@ -4867,9 +4866,12 @@ img {
     margin-top: 0 !important;
     min-height: auto !important;
     overflow: visible !important;
-    max-width: 260px !important;
+    width: 260px !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
   
   .slider-item-human-photo {
